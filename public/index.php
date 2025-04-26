@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RKW74QFNX7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RKW74QFNX7');
+</script>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allegheny Eclipse - Color Guard Nonprofit</title>
+    <title>Allegheny Eclipse - Warren, Pennsylvania Adult Color Guard</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Merriweather:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -90,7 +102,7 @@
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
-            <p class="copyright">&copy; 2025 Allegheny Eclipse. All rights reserved.</p>
+            <p class="copyright">&copy; 2025 Allegheny Eclipse. All rights reserved.<br/>Warren, Pennsylvania</p>
         </div>
     </footer>
     <script src="js/scripts.js"></script>
