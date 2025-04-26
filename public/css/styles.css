@@ -5,6 +5,7 @@
     --gold: #C08E2D;
     --off-black: #231F20;
     --off-black-light: #2A2627;
+    --off-black-lighter: #3B3536;
     --light-purple: #9B6FA3;
     --text-light: #E0E0E0;
     --white: #FFFFFF;
@@ -22,11 +23,13 @@ body {
     color: var(--text-light);
     background-color: var(--off-black);
     line-height: 1.6;
+    margin: 0 auto;
 }
 
 h1, h2 {
     font-family: 'Poppins', sans-serif;
     color: var(--gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 a {
@@ -62,6 +65,7 @@ a {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .nav-menu {
@@ -77,10 +81,12 @@ a {
     font-size: 1rem;
     padding: 10px;
     transition: color 0.3s ease;
+    color: var(--off-black);
+
 }
 
 .nav-menu a:hover {
-    color: var(--primary-purple);
+    color: var(--off-black-lighter);
 }
 
 .nav-toggle {
@@ -170,11 +176,13 @@ a {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+
 }
 
 .hero-logo {
     position: absolute;
-    top: -50px;
+    top: 1em;
     left: 50%;
     transform: translateX(-50%);
     width: 250px;
@@ -192,16 +200,17 @@ a {
     display: flex;
     align-items: center;
     gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-img {
-    width: 50%;
     max-width: 400px;
     border-radius: 10px;
 }
 
 .about-text {
-    width: 50%;
+ /*   width: 50%;*/
 }
 
 .about-text h2 {
@@ -300,7 +309,46 @@ a {
     color: var(--white);
 }
 
+/* Footer Styles */
+.footer {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin: 0 15px;
+    color: var(--gold);
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--off-black-lighter);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-family: 'Merriweather', serif;
+}
+
 /* Responsive Design */
+
+@media (max-width: 960px) {
+    .hero-logo {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -327,12 +375,6 @@ a {
 
     .hero h1 {
         font-size: 2.5rem;
-    }
-
-    .hero-logo {
-        width: 200px;
-        height: 200px;
-        top: -40px;
     }
 
     .about-container {

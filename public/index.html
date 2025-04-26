@@ -6,41 +6,45 @@
     <title>Allegheny Eclipse - Color Guard Nonprofit</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Merriweather:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">Allegheny Eclipse</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#calendar">Calendar</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="container">
+            <div class="nav-container">
+                <a href="#hero" class="nav-logo">Allegheny Eclipse</a>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#calendar">Calendar</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <img src="img/logo.png" alt="Allegheny Eclipse circular logo" class="hero-logo">
+        <img src="img/logo.png" alt="Allegheny Eclipse logo" class="hero-logo">
         <div class="hero-content">
             <h1>Allegheny Eclipse</h1>
         </div>
-        <img src="https://placehold.co/600x400" alt="Color guard performance placeholder" class="hero-bg">
+        <img src="img/hero.png" alt="Color guard performers having a blast" class="hero-bg">
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="about-container">
-            <img src="https://placehold.co/600x400" alt="Allegheny Eclipse color guard in action" class="about-img">
+            <img src="img/about.png" alt="Allegheny Eclipse color guard in action" class="about-img">
             <div class="about-text">
                 <h2>About Us</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Founded in 2025, our color guard was created for adults who never stopped loving the art of performance. What started as a small dream quickly grew into a vibrant space for movers, dancers, spinners, and storytellers of all backgrounds. Our members bring their experience, passion, and dedication together to celebrate the athleticism, artistry, and spirit of color guard.</p>
+                <p>We believe color guard is for everyone — at every stage of life. Our goal is to foster a supportive and challenging environment where members can refine their skills, connect with others, and continue to perform with pride and creativity. Whether under the bright lights of a stadium or in the soft spotlight of a local performance, we aim to share the joy, power, and beauty of our art form with every audience we meet.</p>
+                <p>Join us as we continue to grow, learn, and inspire one another. Together, we are Allegheny Eclipse!</p>
             </div>
         </div>
     </section>
@@ -50,7 +54,7 @@
         <div class="calendar-container">
             <h2>Upcoming Events</h2>
             <!-- Replace the src URL with your Google Calendar embed link -->
-            <iframe src="https://calendar.google.com/calendar/embed?src=your-calendar-id&ctz=America/New_York" class="calendar-iframe" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=America%2FNew_York&showPrint=0&showTitle=0&showTabs=0&showCalendars=0&src=MGZlMDUxOGIzNmNjZTIxMzcwNGJjM2ZhOTlhMTVjNmI2NDE5ZjIzOTBiMTQ5MzI3MmM0YzNhMWQzNzZiZmNkNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239E69AF" class="calendar-iframe" frameborder="0" scrolling="no"></iframe>
         </div>
     </section>
 
@@ -75,7 +79,20 @@
             </form>
         </div>
     </section>
-
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Allegheny Eclipse. All rights reserved.</p>
+        </div>
+    </footer>
     <script src="js/scripts.js"></script>
 </body>
 </html>
