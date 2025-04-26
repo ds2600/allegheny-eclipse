@@ -345,7 +345,12 @@ a {
 
 @media (max-width: 960px) {
     .hero-logo {
-        display: none;
+        top: 40%;
+        left: 50%
+        transform: translate(-50%, -50%);
+    }
+    .hero h1 {
+       display:none; 
     }
 }
 
@@ -373,9 +378,6 @@ a {
         display: block;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
 
     .about-container {
         flex-direction: column;
@@ -392,14 +394,9 @@ a {
 }
 
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
     .hero-logo {
         width: 150px;
         height: 150px;
-        top: -30px;
     }
 
     .about-text h2,
