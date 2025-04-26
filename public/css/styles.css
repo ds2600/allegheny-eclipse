@@ -394,11 +394,6 @@ a {
 }
 
 @media (max-width: 480px) {
-    .hero-logo {
-        width: 150px;
-        height: 150px;
-    }
-
     .about-text h2,
     .calendar h2,
     .contact h2 {
