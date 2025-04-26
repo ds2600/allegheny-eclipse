@@ -186,7 +186,6 @@ a {
     left: 50%;
     transform: translateX(-50%);
     width: 250px;
-    height: 250px;
     z-index: 1001;
 }
 
@@ -345,9 +344,10 @@ a {
 
 @media (max-width: 960px) {
     .hero-logo {
-        top: 40%;
+        top: 35%;
         left: 50%
         transform: translate(-50%, -50%);
+        width: 350px;
     }
     .hero h1 {
        display:none; 
