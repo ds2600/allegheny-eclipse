@@ -78,6 +78,11 @@ a {
     margin-left: 4px;
 }
 
+.nav-menu li:hover {
+    background: var(--gold);
+    border-radius: 5px;
+}
+
 .nav-menu a {
     font-size: 1rem;
     padding: 10px;
