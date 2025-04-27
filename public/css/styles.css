@@ -186,6 +186,7 @@ a {
 
 }
 
+
 .hero-logo {
     position: absolute;
     top: 1em;
@@ -193,6 +194,12 @@ a {
     transform: translateX(-50%);
     width: 250px;
     z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.hero-logo:hover {
+    transform: translateX(-50%) scale(1.05);
+    transition: transform 0.3s ease; 
 }
 
 /* About Section */
@@ -221,6 +228,12 @@ a {
 .about-text h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    transition: transform 0.2s ease-out;
+}
+
+.about-text h2:hover {
+    transform: rotate(2deg);
+    transition: transform 0.2s ease;
 }
 
 .about-text p {
@@ -239,6 +252,12 @@ a {
 .calendar h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    transition: transform 0.2s ease-out;
+}
+
+.calendar h2:hover {
+    transform: rotate(-2deg);
+    transition: transform 0.2s ease;
 }
 
 .calendar-iframe {
@@ -327,6 +346,12 @@ a {
 .contact h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    transition: transform 0.2s ease-out;
+}
+
+.contact h2:hover {
+    transform: rotate(2deg);
+    transition: transform 0.2s ease;
 }
 
 .contact-form {
