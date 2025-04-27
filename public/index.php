@@ -3,8 +3,11 @@ date_default_timezone_set('America/New_York');
 $launch = strtotime('2025-04-27 17:00:00');
 $domain = $_SERVER['HTTP_HOST'];
 if (time() < $launch && $domain === 'alleghenyeclipse.com' || $domain === 'www.alleghenyeclipse.com') {
-    header('Location: comingsoon.php');
-    exit;
+    if (!isset($_GET['force'])) {
+        // Redirect to the coming soon page
+        header('Location: comingsoon.php');
+        exit;
+    } 
 }
 ?>
 <!DOCTYPE html>
