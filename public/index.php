@@ -33,6 +33,7 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#calendar">Calendar</a></li>
+                    <li><a href="#team">Meet Our Team</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -66,9 +67,43 @@
         <div class="calendar-container">
             <h2>Upcoming Events</h2>
             <!-- Replace the src URL with your Google Calendar embed link -->
-            <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=America%2FNew_York&showPrint=0&showTitle=0&showTabs=0&showCalendars=0&src=MGZlMDUxOGIzNmNjZTIxMzcwNGJjM2ZhOTlhMTVjNmI2NDE5ZjIzOTBiMTQ5MzI3MmM0YzNhMWQzNzZiZmNkNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239E69AF" class="calendar-iframe" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=America%2FNew_York&showPrint=0&showTitle=0&showCalendars=0&title=Allegheny%20Eclipse&mode=AGENDA&src=MGZlMDUxOGIzNmNjZTIxMzcwNGJjM2ZhOTlhMTVjNmI2NDE5ZjIzOTBiMTQ5MzI3MmM0YzNhMWQzNzZiZmNkNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239E69AF" class="calendar-iframe" frameborder="0" scrolling="no"></iframe>
         </div>
     </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="team-container">
+            <div class="team-text"> 
+                <h2>Meet Our Team</h2> 
+            </div>
+            <div class="team-profiles">
+                <div class="profile">
+                    <img src="img/portrait.png" alt="Team member headshot" class="profile-img">
+                    <div class="profile-text">
+                        <h3>Jane Doe</h3>
+                        <p>Jane is a veteran performer with 10 years of color guard experience. She leads our choreography team with creativity and precision.</p>
+                    </div>
+                </div>
+                <div class="profile">
+                    <img src="img/portrait.png" alt="Team member headshot" class="profile-img">
+                    <div class="profile-text">
+                        <h3>John Smith</h3>
+                        <p>John brings his passion for dance and flag work to every rehearsal, inspiring the team with his energy.</p>
+                    </div>
+                </div>
+                <div class="profile">
+                    <img src="img/portrait.png" alt="Team member headshot" class="profile-img">
+                    <div class="profile-text">
+                        <h3>John Smith</h3>
+                        <p>John brings his passion for dance and flag work to every rehearsal, inspiring the team with his energy.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -95,11 +130,16 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="social-icons">
-                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                <a href="https://facebook.com/alleghenyeclipse" target="_blank" aria-label="Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+<!--
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
+                </a>
+-->
+                <a href="https://youtube.com/alleghenyeclipse" target="_blank" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
                 </a>
             </div>
             <p class="copyright">&copy; 2025 Allegheny Eclipse. All rights reserved.<br/>Warren, Pennsylvania</p>

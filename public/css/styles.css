@@ -3,6 +3,7 @@
     --primary-purple: #85598E;
     --dark-purple: #220F28;
     --gold: #C08E2D;
+    --gold-darker: #8C651F;
     --off-black: #231F20;
     --off-black-light: #2A2627;
     --off-black-lighter: #3B3536;
@@ -243,10 +244,73 @@ a {
     border-radius: 10px;
 }
 
+/* Team Section */
+.team {
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));
+}
+.team-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.team-text {
+    margin-bottom: 40px;
+}
+
+.team-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.team-text p {
+    margin-bottom: 15px;
+}
+
+.team-profiles {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile:nth-child(even) {
+    flex-direction: row-reverse; 
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.profile-text {
+    flex: 1;
+}
+
+.profile-text h3 {
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.profile-text p {
+    margin-bottom: 10px;
+}
+
+
+
 /* Contact Section */
 .contact {
     padding: 80px 20px;
-    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));
+ /*   background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));*/
 }
 
 .contact-container {
@@ -331,7 +395,7 @@ a {
 }
 
 .social-icons a:hover {
-    color: var(--off-black-lighter);
+    color: var(--gold-darker);
 }
 
 .copyright {
@@ -364,6 +428,7 @@ a {
         background: var(--off-black);
         flex-direction: column;
         padding: 20px;
+        background: linear-gradient(to bottom, var(--light-purple), var(--primary-purple));
     }
 
     .nav-menu.active {
@@ -391,12 +456,34 @@ a {
     .calendar-iframe {
         height: 400px;
     }
-}
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
 
+    .profile:nth-child(even) {
+        flex-direction: column; /* Stack vertically on mobile, no reverse */
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+}
 @media (max-width: 480px) {
     .about-text h2,
     .calendar h2,
     .contact h2 {
         font-size: 2rem;
     }
+    .team-text h2,
+    .profile-text h3 {
+        font-size: 2rem;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
 }

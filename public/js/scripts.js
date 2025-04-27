@@ -10,10 +10,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const heroLogo = document.querySelector('.hero-logo');
+    const origZIndex = getComputedStyle(heroLogo).zIndex;
 
     navToggle.addEventListener('click', () => {
         navToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
+
+        if (navMenu.classList.contains('active')) {
+            heroLogo.style.zIndex = 100; 
+        } else {
+            heroLogo.style.zIndex = origZIndex; 
+        }
     });
 
     // Close menu when a link is clicked (mobile)
@@ -21,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
+            heroLogo.style.zIndex = origZIndex; 
         });
     });
 });
