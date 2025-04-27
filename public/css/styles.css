@@ -75,7 +75,7 @@ a {
 }
 
 .nav-menu li {
-    margin-left: 20px;
+    margin-left: 4px;
 }
 
 .nav-menu a {
@@ -310,7 +310,7 @@ a {
 /* Contact Section */
 .contact {
     padding: 80px 20px;
- /*   background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));*/
+    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));
 }
 
 .contact-container {

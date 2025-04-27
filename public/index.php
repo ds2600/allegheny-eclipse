@@ -33,7 +33,6 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#calendar">Calendar</a></li>
-                    <li><a href="#team">Meet Our Team</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -56,7 +55,7 @@
             <div class="about-text">
                 <h2>About Us</h2>
                 <p>Founded in 2025, our color guard was created for adults who never stopped loving the art of performance. What started as a small dream quickly grew into a vibrant space for movers, dancers, spinners, and storytellers of all backgrounds. Our members bring their experience, passion, and dedication together to celebrate the athleticism, artistry, and spirit of color guard.</p>
-                <p>We believe color guard is for everyone — at every stage of life. Our goal is to foster a supportive and challenging environment where members can refine their skills, connect with others, and continue to perform with pride and creativity. Whether under the bright lights of a stadium or in the soft spotlight of a local performance, we aim to share the joy, power, and beauty of our art form with every audience we meet.</p>
+                <p>Our mission is to foster a supportive and challenging environment where members can refine their skills, connect with others, and continue to perform with pride and creativity. Whether under the bright lights of a stadium or in the soft spotlight of a local performance, we aim to share the joy, power, and beauty of our art form with every audience we meet. We believe color guard is for everyone — at every stage of life.</p>
                 <p>Join us as we continue to grow, learn, and inspire one another. Together, we are Allegheny Eclipse!</p>
             </div>
         </div>
@@ -70,40 +69,6 @@
             <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=America%2FNew_York&showPrint=0&showTitle=0&showCalendars=0&title=Allegheny%20Eclipse&mode=AGENDA&src=MGZlMDUxOGIzNmNjZTIxMzcwNGJjM2ZhOTlhMTVjNmI2NDE5ZjIzOTBiMTQ5MzI3MmM0YzNhMWQzNzZiZmNkNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239E69AF" class="calendar-iframe" frameborder="0" scrolling="no"></iframe>
         </div>
     </section>
-
-    <!-- Team Section -->
-    <section id="team" class="team">
-        <div class="team-container">
-            <div class="team-text"> 
-                <h2>Meet Our Team</h2> 
-            </div>
-            <div class="team-profiles">
-                <div class="profile">
-                    <img src="img/portrait.png" alt="Team member headshot" class="profile-img">
-                    <div class="profile-text">
-                        <h3>Jane Doe</h3>
-                        <p>Jane is a veteran performer with 10 years of color guard experience. She leads our choreography team with creativity and precision.</p>
-                    </div>
-                </div>
-                <div class="profile">
-                    <img src="img/portrait.png" alt="Team member headshot" class="profile-img">
-                    <div class="profile-text">
-                        <h3>John Smith</h3>
-                        <p>John brings his passion for dance and flag work to every rehearsal, inspiring the team with his energy.</p>
-                    </div>
-                </div>
-                <div class="profile">
-                    <img src="img/portrait.png" alt="Team member headshot" class="profile-img">
-                    <div class="profile-text">
-                        <h3>John Smith</h3>
-                        <p>John brings his passion for dance and flag work to every rehearsal, inspiring the team with his energy.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
