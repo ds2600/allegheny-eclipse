@@ -219,6 +219,12 @@ a {
 .about-img {
     max-width: 400px;
     border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.about-img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 .about-text {
