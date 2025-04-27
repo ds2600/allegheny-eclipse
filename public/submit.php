@@ -6,8 +6,14 @@
  * Designed for Allegheny Eclipse website.
  */
 
+
 // Set headers for security and response
 //header('Content-Type: application/json');
+
+$config = require '../config.php'; 
+error_log($config['sendTo']);
+require '../vendor/autoload.php'; 
+use PHPMailer\PHPMailer\PHPMailer;
 
 // Initialize response array
 $response = ['success' => false, 'message' => ''];
@@ -32,7 +38,7 @@ if (empty($name)) {
 }
 
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $response['message'] = 'A valid email is required.';
+    $response['message'] = 'A valid email is required.:';
     echo json_encode($response);
     exit;
 }
@@ -43,32 +49,23 @@ if (empty($comments)) {
     exit;
 }
 
-// Prepare data for CSV
-$csvFile = 'data/submissions.csv';
-$data = [
-    date('Y-m-d H:i:s'), // Timestamp
-    $name,
-    $email,
-    $comments
-];
-
-// Ensure CSV file exists and has headers
-if (!file_exists($csvFile)) {
-    $headers = ['Timestamp', 'Name', 'Email', 'Comments'];
-    $file = fopen($csvFile, 'w');
-    fputcsv($file, $headers);
-    fclose($file);
+$mail = new PHPMailer(true);
+try {
+    $mail->isMail();
+    $mail->setFrom($email, $name);
+    $mail->addAddress($config['sendTo']);
+    $mail->isHTML(false);
+    $mail->Subject = 'Contact Form Submission';
+    $mail->Body = "Name: $name\nEmail: $email\nComments: $comments";
+    $mail->send();
+    $response['success'] = true;
+    $response['message'] = 'Message sent successfully.';
+} catch (Exception $e) {
+    $response['message'] = 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
+    echo json_encode($response);
+    exit;
 }
 
-// Append data to CSV
-$file = fopen($csvFile, 'a');
-fputcsv($file, $data);
-fclose($file);
-
-// Send success response
-$response['success'] = true;
-$response['message'] = 'Thank you for your message! We will get back to you soon.';
-//echo json_encode($response);
 header('Location: index.php');
 exit;
 ?>
