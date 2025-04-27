@@ -45,24 +45,9 @@ if (time() < $launch && $domain === 'alleghenyeclipse.com' || $domain === 'www.a
 
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-container">
-                <a href="#hero" class="nav-logo">Allegheny Eclipse</a>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span class="hamburger"></span>
-                </button>
-                <ul class="nav-menu">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#calendar">Calendar</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+<?php
+include '../inc/navbar.php';
+?>
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <img src="img/logo.png" alt="Allegheny Eclipse logo" class="hero-logo">
@@ -115,25 +100,9 @@ if (time() < $launch && $domain === 'alleghenyeclipse.com' || $domain === 'www.a
             </form>
         </div>
     </section>
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="social-icons">
-                <a href="https://facebook.com/alleghenyeclipse" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-<!--
-                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
--->
-                <a href="https://youtube.com/@alleghenyeclipse" target="_blank" aria-label="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
-            <p class="copyright">&copy; 2025 Allegheny Eclipse. All rights reserved.<br/>Warren, Pennsylvania</p>
-        </div>
-    </footer>
+<?php
+include '../inc/footer.php';
+?>
     <script src="js/scripts.js"></script>
 </body>
 </html>

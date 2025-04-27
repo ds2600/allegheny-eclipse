@@ -11,16 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const heroLogo = document.querySelector('.hero-logo');
-    const origZIndex = getComputedStyle(heroLogo).zIndex;
+    const origZIndex = heroLogo ? getComputedStyle(heroLogo).zIndex : null;
 
     navToggle.addEventListener('click', () => {
         navToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
 
-        if (navMenu.classList.contains('active')) {
-            heroLogo.style.zIndex = 100; 
-        } else {
-            heroLogo.style.zIndex = origZIndex; 
+        if (heroLogo) {
+            if (navMenu.classList.contains('active')) {
+                heroLogo.style.zIndex = 100;
+            } else {
+                heroLogo.style.zIndex = origZIndex;
+            }
         }
     });
 
@@ -29,7 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
-            heroLogo.style.zIndex = origZIndex; 
+            if (heroLogo) {
+                heroLogo.style.zIndex = origZIndex;
+            }
         });
     });
 });
@@ -51,10 +55,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Contact Form Validation
-document.querySelector('.contact-form').addEventListener('submit', function (e) {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const comments = document.getElementById('comments').value.trim();
+document.querySelector('.contact-form')?.addEventListener('submit', function (e) {
+    const name = document.getElementById('name')?.value.trim();
+    const email = document.getElementById('email')?.value.trim();
+    const comments = document.getElementById('comments')?.value.trim();
     let isValid = true;
 
     // Basic validation
