@@ -1,115 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RKW74QFNX7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RKW74QFNX7');
-</script>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allegheny Eclipse - Warren, Pennsylvania Adult Color Guard</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Merriweather:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Allegheny Eclipse - Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
 </head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-container">
-                <a href="#hero" class="nav-logo">Allegheny Eclipse</a>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span class="hamburger"></span>
-                </button>
-                <ul class="nav-menu">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#calendar">Calendar</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <img src="img/logo.png" alt="Allegheny Eclipse logo" class="hero-logo">
-        <div class="hero-content">
-            <h1 class="hero-text">Allegheny Eclipse</h1>
-        </div>
-        <img src="img/hero.png" alt="Color guard performers having a blast" class="hero-bg">
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-container">
-            <img src="img/about.png" alt="Allegheny Eclipse color guard in action" class="about-img">
-            <div class="about-text">
-                <h2>About Us</h2>
-                <p>Founded in 2025, our color guard was created for adults who never stopped loving the art of performance. What started as a small dream quickly grew into a vibrant space for movers, dancers, spinners, and storytellers of all backgrounds. Our members bring their experience, passion, and dedication together to celebrate the athleticism, artistry, and spirit of color guard.</p>
-                <p>Our mission is to foster a supportive and challenging environment where members can refine their skills, connect with others, and continue to perform with pride and creativity. Whether under the bright lights of a stadium or in the soft spotlight of a local performance, we aim to share the joy, power, and beauty of our art form with every audience we meet. We believe color guard is for everyone — at every stage of life.</p>
-                <p>Join us as we continue to grow, learn, and inspire one another. Together, we are Allegheny Eclipse!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Calendar Section -->
-    <section id="calendar" class="calendar">
-        <div class="calendar-container">
-            <h2>Upcoming Events</h2>
-            <!-- Replace the src URL with your Google Calendar embed link -->
-            <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=America%2FNew_York&showPrint=0&showTitle=0&showCalendars=0&title=Allegheny%20Eclipse&mode=AGENDA&src=MGZlMDUxOGIzNmNjZTIxMzcwNGJjM2ZhOTlhMTVjNmI2NDE5ZjIzOTBiMTQ5MzI3MmM0YzNhMWQzNzZiZmNkNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239E69AF" class="calendar-iframe" frameborder="0" scrolling="no"></iframe>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <h2>Contact Us</h2>
-            <form action="submit.php" method="POST" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="comments">Comments</label>
-                    <textarea id="comments" name="comments" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="form-submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="social-icons">
-                <a href="https://facebook.com/alleghenyeclipse" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-<!--
-                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
--->
-                <a href="https://youtube.com/alleghenyeclipse" target="_blank" aria-label="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
-            <p class="copyright">&copy; 2025 Allegheny Eclipse. All rights reserved.<br/>Warren, Pennsylvania</p>
-        </div>
-    </footer>
-    <script src="js/scripts.js"></script>
+<body style="margin: 0; padding: 0; min-height: 100vh; display: flex; justify-content: center; align-items: center; background: linear-gradient(to bottom, #85598E, #9B6FA3);">
+    <h1 style="font-family: 'Poppins', sans-serif; font-size: 5rem; color: #C08E2D; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); text-align: center; animation: float 3s ease-in-out infinite;">Coming Soon</h1>
 </body>
 </html>
