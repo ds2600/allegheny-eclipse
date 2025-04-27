@@ -7,7 +7,7 @@
  */
 
 // Set headers for security and response
-header('Content-Type: application/json');
+//header('Content-Type: application/json');
 
 // Initialize response array
 $response = ['success' => false, 'message' => ''];
@@ -68,6 +68,7 @@ fclose($file);
 // Send success response
 $response['success'] = true;
 $response['message'] = 'Thank you for your message! We will get back to you soon.';
-echo json_encode($response);
+//echo json_encode($response);
+header('Location: index.php');
 exit;
 ?>

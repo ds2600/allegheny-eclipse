@@ -32,6 +32,14 @@ if (time() < $launch && $domain === 'alleghenyeclipse.com' || $domain === 'www.a
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+
 </head>
 <body>
     <!-- Navbar -->
@@ -56,7 +64,7 @@ if (time() < $launch && $domain === 'alleghenyeclipse.com' || $domain === 'www.a
     <section id="hero" class="hero">
         <img src="img/logo.png" alt="Allegheny Eclipse logo" class="hero-logo">
         <div class="hero-content">
-            <h1 class="hero-text">Allegheny Eclipse</h1>
+            <h1 class="hero-text" style="animation: float 3s ease-in-out infinite;">Allegheny Eclipse</h1>
         </div>
         <img src="img/hero.png" alt="Color guard performers having a blast" class="hero-bg">
     </section>
