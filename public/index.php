@@ -127,7 +127,7 @@ if (time() < $launch && $domain === 'alleghenyeclipse.com' || $domain === 'www.a
                     <i class="fab fa-instagram"></i>
                 </a>
 -->
-                <a href="https://youtube.com/alleghenyeclipse" target="_blank" aria-label="YouTube">
+                <a href="https://youtube.com/@alleghenyeclipse" target="_blank" aria-label="YouTube">
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
