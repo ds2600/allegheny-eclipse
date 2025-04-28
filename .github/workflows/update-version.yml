@@ -7,7 +7,11 @@ jobs:
   update-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main  
+          fetch-depth: 0 
       - name: Update VERSION
         run: |
           TAG=${GITHUB_REF#refs/tags/}
@@ -15,5 +19,5 @@ jobs:
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
           git add VERSION
-          git commit -m "Update VERSION to ${TAG#v}"
+          git commit -m "Update VERSION to ${TAG#v}" || echo "No changes to commit"
           git push origin main
