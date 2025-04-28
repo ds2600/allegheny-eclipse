@@ -11,6 +11,7 @@ $dotenv->load();
 
 
 $version = file_get_contents(__DIR__ . '/../VERSION');
+$build = file_get_contents(__DIR__ . '/../BUILD');
 
 
 
