@@ -13,7 +13,6 @@
 require '../inc/init.php';
 
 $config = require '../config.php'; 
-use PHPMailer\PHPMailer\PHPMailer;
 
 // Initialize response array
 $response = ['success' => false, 'message' => ''];
@@ -78,12 +77,24 @@ if (intval($responseKeys["success"]) !== 1) {
     exit;
 }
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 $mail = new PHPMailer(true);
 try {
-    $mail->isMail();
-    $mail->setFrom($email, $name);
+    $mail->SMTPDebug = SMTP::DEBUG_OFF;
+    $mail->isSMTP();
+    $mail->Host = $_ENV['SMTP_HOST'];
+    $mail->SMTPAuth = true;
+    $mail->Username = $_ENV['SMTP_USER'];
+    $mail->Password = $_ENV['SMTP_PASS'];
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = $_ENV['SMTP_PORT'];
+
+    $mail->setFrom($config['fromEmail'], $config['fromEmail']);
     $mail->addAddress($config['sendTo']);
     $mail->isHTML(false);
+    
     $mail->Subject = 'Contact Form Submission';
     $mail->Body = "Name: $name\nEmail: $email\nComments: $comments";
     $mail->send();
