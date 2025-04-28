@@ -21,7 +21,7 @@
         </div>
         <div class="version">
             <p>
-                TESTING<?php echo $version; ?>
+               <?php echo $version; ?>
             </p>
 <?php
     if ($_ENV['ENVIRONMENT'] !== 'production') {
