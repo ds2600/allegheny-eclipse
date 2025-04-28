@@ -1,0 +1,54 @@
+name: Update BUILD File
+
+on:
+  push:
+    branches:
+      - main
+
+# Add permissions to allow writing to the repository
+permissions:
+  contents: write
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update BUILD 
+        shell: bash
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          BUILD_FILE="BUILD"
+          DEFAULT_SUFFIX="001"
+
+          if [ -f "$BUILD_FILE" ]; then
+            LAST_BUILD=$(cat "$BUILD_FILE")
+            LAST_DATE=$(echo "$LAST_BUILD" | cut -d'-' -f1-3 | tr -d '\n')
+            LAST_SUFFIX=$(echo "$LAST_BUILD" | cut -d'-' -f4 | sed 's/b//')
+
+            if [ "$LAST_DATE" == "$DATE" ]; then
+              NEW_SUFFIX=$(printf "%03d" $((10#$LAST_SUFFIX + 1)))
+            else
+              NEW_SUFFIX="$DEFAULT_SUFFIX"
+            fi
+          else
+            NEW_SUFFIX="$DEFAULT_SUFFIX"
+          fi
+
+          NEW_BUILD="$DATE-b$NEW_SUFFIX"
+
+          echo "$NEW_BUILD" > "$BUILD_FILE"
+
+          if git diff --quiet "$BUILD_FILE"; then
+            echo "No changes to BUILD file"
+          else
+            git config user.name "GitHub Action"
+            git config user.email "action@github.com"
+            git add "$BUILD_FILE"
+            git commit -m "Update BUILD to $NEW_BUILD"
+            git push origin main
+          fi

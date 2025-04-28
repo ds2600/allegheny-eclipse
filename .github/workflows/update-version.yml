@@ -1,54 +1,19 @@
-name: Update VERSION File
-
+name: Update VERSION on Release
 on:
   push:
-    branches:
-      - main
-
-# Add permissions to allow writing to the repository
-permissions:
-  contents: write
-
+    tags:
+      - 'v*'
 jobs:
   update-version:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
+      - uses: actions/checkout@v4
       - name: Update VERSION
-        shell: bash
         run: |
-          DATE=$(date +%Y-%m-%d)
-          VERSION_FILE="VERSION"
-          DEFAULT_SUFFIX="001"
-
-          if [ -f "$VERSION_FILE" ]; then
-            LAST_VERSION=$(cat "$VERSION_FILE")
-            LAST_DATE=$(echo "$LAST_VERSION" | cut -d'-' -f1-3 | tr -d '\n')
-            LAST_SUFFIX=$(echo "$LAST_VERSION" | cut -d'-' -f4 | sed 's/b//')
-
-            if [ "$LAST_DATE" == "$DATE" ]; then
-              NEW_SUFFIX=$(printf "%03d" $((10#$LAST_SUFFIX + 1)))
-            else
-              NEW_SUFFIX="$DEFAULT_SUFFIX"
-            fi
-          else
-            NEW_SUFFIX="$DEFAULT_SUFFIX"
-          fi
-
-          NEW_VERSION="$DATE-b$NEW_SUFFIX"
-
-          echo "$NEW_VERSION" > "$VERSION_FILE"
-
-          if git diff --quiet "$VERSION_FILE"; then
-            echo "No changes to VERSION file"
-          else
-            git config user.name "GitHub Action"
-            git config user.email "action@github.com"
-            git add "$VERSION_FILE"
-            git commit -m "Update VERSION to $NEW_VERSION"
-            git push origin main
-          fi
+          TAG=${GITHUB_REF#refs/tags/}
+          echo "${TAG#v}" > VERSION
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add VERSION
+          git commit -m "Update VERSION to ${TAG#v}"
+          git push origin main
