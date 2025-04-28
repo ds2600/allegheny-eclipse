@@ -458,6 +458,10 @@ a {
     font-size: 1.1rem;
 }
 
+.cf-turnstile {
+    text-align: center;
+}
+
 /* Responsive Design */
 
 @media (max-width: 960px) {

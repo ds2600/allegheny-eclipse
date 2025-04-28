@@ -3,4 +3,5 @@ public/data/*
 vendor
 node_modules
 config.php
+.env
 

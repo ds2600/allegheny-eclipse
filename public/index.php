@@ -1,5 +1,5 @@
 <?php
-
+require '../inc/init.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,7 @@
             100% { transform: translateY(0); }
         }
     </style>
-
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 <?php
@@ -86,6 +86,9 @@ include '../inc/navbar.php';
                 <div class="form-group">
                     <label for="comments">Comments</label>
                     <textarea id="comments" name="comments" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <div data-sitekey="<?php echo $_ENV['CF_SITE_KEY']; ?>" class="cf-turnstile"></div>
                 </div>
                 <button type="submit" class="form-submit">Send Message</button>
             </form>

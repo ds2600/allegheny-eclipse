@@ -10,9 +10,9 @@
 // Set headers for security and response
 //header('Content-Type: application/json');
 
+require '../inc/init.php';
+
 $config = require '../config.php'; 
-error_log($config['sendTo']);
-require '../vendor/autoload.php'; 
 use PHPMailer\PHPMailer\PHPMailer;
 
 // Initialize response array
@@ -29,6 +29,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $comments = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STRING);
+$captcha_response = filter_input(INPUT_POST, 'cf-turnstile-response', FILTER_SANITIZE_STRING);
+
+if (empty($captcha_response)) {
+    $response['message'] = 'Captcha verification failed.';
+    echo json_encode($response);
+    exit;
+}
+
+$captcha_secret = $_ENV['CF_SECRET_KEY'];
 
 // Server-side validation
 if (empty($name)) {
@@ -45,6 +54,26 @@ if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 if (empty($comments)) {
     $response['message'] = 'Comments are required.';
+    echo json_encode($response);
+    exit;
+}
+
+$captcha_url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL, $captcha_url);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+    'secret' => $captcha_secret,
+    'response' => $captcha_response,
+]));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$curl_response = curl_exec($ch);
+curl_close($ch);
+
+$responseKeys = json_decode($curl_response, true);
+if (intval($responseKeys["success"]) !== 1) {
+    $response['message'] = 'Captcha verification failed.';
     echo json_encode($response);
     exit;
 }
