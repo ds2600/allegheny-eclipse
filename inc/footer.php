@@ -21,11 +21,11 @@
         </div>
         <div class="version">
             <p>
-               <?php echo $version; ?>
+               <?php echo $build; ?>
             </p>
 <?php
     if ($_ENV['ENVIRONMENT'] !== 'production') {
-        echo '<p>' . $build . '</p>';
+        echo '<p>' . $_ENV['ENVIRONMENT'] . '</p>';
     }
 ?>
         </div>
