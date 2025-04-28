@@ -10,5 +10,8 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__. '/..');
 $dotenv->load();
 
 
+$version = file_get_contents(__DIR__ . '/../VERSION');
+
+
 
 

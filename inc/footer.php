@@ -19,5 +19,6 @@
             </div>
             <p class="copyright">&copy; 2025 Allegheny Eclipse. All rights reserved.<br/>Adult Color Guard and Performing Arts in Warren, Pennsylvania</p>
         </div>
+        <div class="version"><?php echo $version; ?></div>
     </footer>
 
