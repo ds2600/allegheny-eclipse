@@ -12,7 +12,7 @@ require '../inc/init.php';
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-RKW74QFNX7');
+  gtag('config', '<?php echo $_ENV['GA_TRACKING_ID']; ?>');
 </script>
 
 
