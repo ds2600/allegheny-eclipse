@@ -6,13 +6,13 @@ require '../inc/init.php';
 <head>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RKW74QFNX7"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $_ENV['GA_TRACKING_ID']; ?>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '<?php echo $_ENV['GA_TRACKING_ID']; ?>');
+  gtag('config', <?php echo '\''.$_ENV['GA_TRACKING_ID'].'\''; ?>);
 </script>
 
 
@@ -69,7 +69,17 @@ include '../inc/navbar.php';
             <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=America%2FNew_York&showPrint=0&showTitle=0&showCalendars=0&title=Allegheny%20Eclipse&mode=AGENDA&src=MGZlMDUxOGIzNmNjZTIxMzcwNGJjM2ZhOTlhMTVjNmI2NDE5ZjIzOTBiMTQ5MzI3MmM0YzNhMWQzNzZiZmNkNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239E69AF" class="calendar-iframe" frameborder="0" scrolling="no"></iframe>
         </div>
     </section>
-
+    <!-- Support Us Section -->
+    <section id="support" class="support">
+        <div class="support-container">
+            <div class="support-text">
+                <h2>Support Our Journey</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Your support helps us continue our mission to bring color guard to life!</p>
+                <p><a href="https://www.gofundme.com" target="_blank" class="support-link">Donate on GoFundMe</a></p>
+            </div>
+            <img src="img/placeholder.png" alt="Support Allegheny Eclipse" class="support-img">
+        </div>
+    </section>
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="contact-container">
