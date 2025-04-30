@@ -65,7 +65,6 @@ include '../inc/navbar.php';
     <section id="calendar" class="calendar">
         <div class="calendar-container">
             <h2>Upcoming Events</h2>
-            <!-- Replace the src URL with your Google Calendar embed link -->
             <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=America%2FNew_York&showPrint=0&showTitle=0&showCalendars=0&title=Allegheny%20Eclipse&mode=AGENDA&src=MGZlMDUxOGIzNmNjZTIxMzcwNGJjM2ZhOTlhMTVjNmI2NDE5ZjIzOTBiMTQ5MzI3MmM0YzNhMWQzNzZiZmNkNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239E69AF" class="calendar-iframe" frameborder="0" scrolling="no"></iframe>
         </div>
     </section>
@@ -74,10 +73,10 @@ include '../inc/navbar.php';
         <div class="support-container">
             <div class="support-text">
                 <h2>Support Our Journey</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Your support helps us continue our mission to bring color guard to life!</p>
-                <p><a href="https://www.gofundme.com" target="_blank" class="support-link">Donate on GoFundMe</a></p>
+                <p>We’re building something special, a place where adults can rediscover the joy of color guard, connect through movement and music, and bring performance back into their lives. As we launch this new chapter, we’re raising funds to help cover the basics: flags, poles, equipment bags, and other essentials that make our practices and performances possible. If you believe in creativity, community, and second chances to do what you love, we invite you to support our journey. Every contribution helps us shine a little brighter.</p>
+                <p><a href="https://gofund.me/a6574d11" target="_blank" class="btn support-link">Donate on GoFundMe</a></p>
             </div>
-            <img src="img/placeholder.png" alt="Support Allegheny Eclipse" class="support-img">
+            <img src="img/eclipse_support.png" alt="Support Allegheny Eclipse" class="support-img">
         </div>
     </section>
     <!-- Contact Section -->

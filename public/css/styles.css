@@ -220,6 +220,7 @@ a {
     max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-out;
 }
 
 .about-img:hover {
@@ -351,6 +352,7 @@ a {
     max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-out;
 }
 .support-img:hover {
     transform: scale(1.05);
@@ -516,6 +518,43 @@ a {
     color: var(--off-black-lighter);
     margin-top: 20px;
     margin-bottom: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--gold);
+    color: var(--off-black);
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--primary-purple);
+    color: var(--white);
+    transform: scale(1.03);
+}
+
+.btn:active {
+    transform: scale(0.98);
+    background: var(--gold-darker);
+}
+
+.btn:disabled,
+.btn[disabled] {
+    background: var(--off-black-lighter);
+    color: var(--text-light);
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
 }
 
 /* Responsive Design */
