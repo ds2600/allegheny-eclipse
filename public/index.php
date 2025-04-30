@@ -74,7 +74,7 @@ include '../inc/navbar.php';
             <div class="support-text">
                 <h2>Support Our Journey</h2>
                 <p>We’re building something special, a place where adults can rediscover the joy of color guard, connect through movement and music, and bring performance back into their lives. As we launch this new chapter, we’re raising funds to help cover the basics: flags, poles, equipment bags, and other essentials that make our practices and performances possible. If you believe in creativity, community, and second chances to do what you love, we invite you to support our journey. Every contribution helps us shine a little brighter.</p>
-                <p><a href="https://gofund.me/a6574d11" target="_blank" class="btn support-link">Donate on GoFundMe</a></p>
+                <p><a href="https://gofund.me/a6574d11" onclick="gtag('event', 'click', { 'event_category': 'External Link', 'event_label': 'GoFundMe Campaign Click', 'value': 1 });" target="_blank" class="btn support-link">Donate on GoFundMe</a></p>
             </div>
             <img src="img/eclipse_support.png" alt="Support Allegheny Eclipse" class="support-img">
         </div>
