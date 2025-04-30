@@ -6,13 +6,13 @@ require '../inc/init.php';
 <head>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RKW74QFNX7"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $_ENV['GA_TRACKING_ID']; ?>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-RKW74QFNX7');
+  gtag('config', <?php echo '\''.$_ENV['GA_TRACKING_ID'].'\''; ?>);
 </script>
 
 
@@ -65,11 +65,20 @@ include '../inc/navbar.php';
     <section id="calendar" class="calendar">
         <div class="calendar-container">
             <h2>Upcoming Events</h2>
-            <!-- Replace the src URL with your Google Calendar embed link -->
             <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=America%2FNew_York&showPrint=0&showTitle=0&showCalendars=0&title=Allegheny%20Eclipse&mode=AGENDA&src=MGZlMDUxOGIzNmNjZTIxMzcwNGJjM2ZhOTlhMTVjNmI2NDE5ZjIzOTBiMTQ5MzI3MmM0YzNhMWQzNzZiZmNkNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239E69AF" class="calendar-iframe" frameborder="0" scrolling="no"></iframe>
         </div>
     </section>
-
+    <!-- Support Us Section -->
+    <section id="support" class="support">
+        <div class="support-container">
+            <div class="support-text">
+                <h2>Support Our Journey</h2>
+                <p>We’re building something special, a place where adults can rediscover the joy of color guard, connect through movement and music, and bring performance back into their lives. As we launch this new chapter, we’re raising funds to help cover the basics: flags, poles, equipment bags, and other essentials that make our practices and performances possible. If you believe in creativity, community, and second chances to do what you love, we invite you to support our journey. Every contribution helps us shine a little brighter.</p>
+                <p><a href="https://gofund.me/a6574d11" onclick="gtag('event', 'click', { 'event_category': 'External Link', 'event_label': 'GoFundMe Campaign Click', 'value': 1 });" target="_blank" class="btn support-link">Donate on GoFundMe</a></p>
+            </div>
+            <img src="img/eclipse_support.png" alt="Support Allegheny Eclipse" class="support-img">
+        </div>
+    </section>
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="contact-container">

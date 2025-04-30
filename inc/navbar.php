@@ -15,6 +15,7 @@ $base_url = ($current_page === 'index.php' || $current_page === '') ? '' : 'inde
                     <li><a href="<?php echo $base_url; ?>#hero">Home</a></li>
                     <li><a href="<?php echo $base_url; ?>#about">About</a></li>
                     <li><a href="<?php echo $base_url; ?>#calendar">Calendar</a></li>
+                    <li><a href="<?php echo $base_url; ?>#support">Support</a></li>
                     <li><a href="<?php echo $base_url; ?>#contact">Contact</a></li>
                 </ul>
             </div>
