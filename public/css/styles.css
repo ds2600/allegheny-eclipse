@@ -141,6 +141,64 @@ a {
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle::after {
+    content: '\25BC'; /* Down arrow */
+    font-size: 0.7rem;
+    margin-left: 5px;
+    color: var(--off-black);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    margin-top:.5em;
+    left: 0;
+    background: var(--light-purple);
+    list-style: none;
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--off-black);
+    font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover {
+    background: var(--gold);
+    color: var(--off-black-lighter);
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* Show on hover for desktop */
+}
+
+.dropdown-toggle:hover::after {
+    transform: rotate(180deg);
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -595,7 +653,21 @@ a {
     .nav-toggle {
         display: block;
     }
+   
+    .dropdown-menu {
+        position: static;
+        background: var(--primary-purple);
+        box-shadow: none;
+        padding-left: 20px;
+    }
 
+    .dropdown.active .dropdown-menu {
+        display: block; /* Show when active class is toggled */
+    }
+
+    .dropdown-toggle::after {
+        color: var(--white);
+    }
 
     .about-container,
     .support-container {
