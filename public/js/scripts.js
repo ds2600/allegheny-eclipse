@@ -4,9 +4,9 @@
  * - Hamburger menu toggle for mobile navigation
  * - Smooth scrolling for navbar links
  * - Basic client-side form validation
+ * - Dropdown menu toggle for mobile
  */
 
-// Hamburger Menu Toggle
 document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Close menu when a link is clicked (mobile)
     navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             navToggle.classList.remove('active');
@@ -36,9 +35,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const parent = toggle.parentElement;
+                const isActive = parent.classList.contains('active');
+                
+                document.querySelectorAll('.dropdown').forEach(d => {
+                    d.classList.remove('active');
+                });
+                
+                if (!isActive) {
+                    parent.classList.add('active');
+                }
+            }
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(e.target) && !e.target.closest('.nav-toggle')) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        }
+    });
 });
 
-// Smooth Scrolling for Navbar Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -47,21 +75,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         
         if (targetElement) {
             window.scrollTo({
-                top: targetElement.offsetTop - 60, // Adjust for fixed navbar height
+                top: targetElement.offsetTop - 60,
                 behavior: 'smooth'
             });
         }
     });
 });
 
-// Contact Form Validation
 document.querySelector('.contact-form')?.addEventListener('submit', function (e) {
     const name = document.getElementById('name')?.value.trim();
     const email = document.getElementById('email')?.value.trim();
     const comments = document.getElementById('comments')?.value.trim();
     let isValid = true;
 
-    // Basic validation
     if (!name) {
         isValid = false;
         alert('Please enter your name.');
@@ -78,6 +104,6 @@ document.querySelector('.contact-form')?.addEventListener('submit', function (e)
     }
 
     if (!isValid) {
-        e.preventDefault(); // Prevent form submission if validation fails
+        e.preventDefault();
     }
 });
