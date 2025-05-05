@@ -1,6 +1,6 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']);
-$base_url = ($current_page === 'index.php' || $current_page === '') ? '' : 'index.php';
+$base_url = ($current_page === 'index.php' || $current_page === '') ? '' : $_ENV['BASE_URL'] . 'index.php';
 ?>
 
     <!-- Navbar -->
