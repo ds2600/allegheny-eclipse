@@ -8,11 +8,9 @@
                 <a href="https://facebook.com/alleghenyeclipse" target="_blank" aria-label="Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-<!--
-                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <a href="https://instagram.com/allegheny_eclipse" target="_blank" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
--->
                 <a href="https://youtube.com/@alleghenyeclipse" target="_blank" aria-label="YouTube">
                     <i class="fab fa-youtube"></i>
                 </a>

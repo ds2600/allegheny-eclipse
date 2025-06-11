@@ -107,3 +107,35 @@ document.querySelector('.contact-form')?.addEventListener('submit', function (e)
         e.preventDefault();
     }
 });
+
+// Lightbox Functionality
+const galleryImages = document.querySelectorAll('.gallery-img');
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
+document.body.appendChild(lightbox);
+
+const lightboxImg = document.createElement('img');
+lightboxImg.className = 'lightbox-img';
+lightbox.appendChild(lightboxImg);
+
+const lightboxClose = document.createElement('span');
+lightboxClose.className = 'lightbox-close';
+lightboxClose.innerHTML = '&times;';
+lightbox.appendChild(lightboxClose);
+
+galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.dataset.large || img.src;
+        lightbox.style.display = 'flex';
+    });
+});
+
+lightboxClose.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
