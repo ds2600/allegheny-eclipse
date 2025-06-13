@@ -62,7 +62,7 @@ include '../inc/navbar.php';
             </div>
         </div>
         <div class="about-container">
-            <img src="img/about.png" alt="Allegheny Eclipse color guard in action" class="about-img">
+            <img src="img/we_are.jpg" alt="We are Allegheny Eclipse" class="about-img">
             <div class="about-text">
                 <h2>About Us</h2>
                 <p>Founded in 2025, our color guard was created for adults who never stopped loving the art of performance. What started as a small dream quickly grew into a vibrant space for movers, dancers, spinners, and storytellers of all backgrounds. Our members bring their experience, passion, and dedication together to celebrate the athleticism, artistry, and spirit of color guard.</p>
