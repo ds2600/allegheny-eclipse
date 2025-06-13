@@ -24,19 +24,42 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+if ($_ENV['CF_ENABLED']) {
+    $captcha_response = filter_input(INPUT_POST, 'cf-turnstile-response', FILTER_SANITIZE_STRING);
+
+    if (empty($captcha_response)) {
+        $response['message'] = 'Captcha verification failed.';
+        echo json_encode($response);
+        exit;
+    }
+
+    $captcha_secret = $_ENV['CF_SECRET_KEY'];
+
+    $captcha_url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, $captcha_url);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+        'secret' => $captcha_secret,
+        'response' => $captcha_response,
+    ]));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $curl_response = curl_exec($ch);
+    curl_close($ch);
+
+    $responseKeys = json_decode($curl_response, true);
+    if (intval($responseKeys["success"]) !== 1) {
+        $response['message'] = 'Captcha verification failed.';
+        echo json_encode($response);
+        exit;
+    }
+}
+
 // Get form data
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-$comments = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STRING);
-$captcha_response = filter_input(INPUT_POST, 'cf-turnstile-response', FILTER_SANITIZE_STRING);
 
-if (empty($captcha_response)) {
-    $response['message'] = 'Captcha verification failed.';
-    echo json_encode($response);
-    exit;
-}
-
-$captcha_secret = $_ENV['CF_SECRET_KEY'];
 
 // Server-side validation
 if (empty($name)) {
@@ -51,28 +74,18 @@ if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-if (empty($comments)) {
-    $response['message'] = 'Comments are required.';
-    echo json_encode($response);
-    exit;
+if (isset($_POST['comments'])) {
+    $comments = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STRING);
+    $subject = "Comment Form";
+    $body = "Name: $name\nEmail: $email\nComments: $comments"; 
+} elseif (isset($_POST['experience'])) {
+    $experience = filter_input(INPUT_POST, 'experience', FILTER_SANITIZE_STRING); 
+    $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
+    $subject = "Spin Clinic Registration";
+    $body = "Name: $name\nEmail: $email\nPhone: $phone\nExperience: $experience";
 }
 
-$captcha_url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
-$ch = curl_init();
-
-curl_setopt($ch, CURLOPT_URL, $captcha_url);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
-    'secret' => $captcha_secret,
-    'response' => $captcha_response,
-]));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$curl_response = curl_exec($ch);
-curl_close($ch);
-
-$responseKeys = json_decode($curl_response, true);
-if (intval($responseKeys["success"]) !== 1) {
-    $response['message'] = 'Captcha verification failed.';
+if (isset($response['message']) && !empty($response['message'])) {
     echo json_encode($response);
     exit;
 }
@@ -95,8 +108,8 @@ try {
     $mail->addAddress($config['sendTo']);
     $mail->isHTML(false);
     
-    $mail->Subject = 'Contact Form Submission';
-    $mail->Body = "Name: $name\nEmail: $email\nComments: $comments";
+    $mail->Subject = $subject;
+    $mail->Body = $body;
     $mail->send();
     $response['success'] = true;
     $response['message'] = 'Message sent successfully.';

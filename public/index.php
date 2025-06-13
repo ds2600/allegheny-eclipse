@@ -43,13 +43,24 @@ include '../inc/navbar.php';
     <section id="hero" class="hero">
         <img src="img/logo.png" alt="Allegheny Eclipse logo" class="hero-logo">
         <div class="hero-content">
-            <h1 class="hero-text" style="animation: float 3s ease-in-out infinite;">Allegheny Eclipse</h1>
+<!--            <h1 class="hero-text" style="animation: float 3s ease-in-out infinite;">Allegheny Eclipse</h1>-->
+                <img src="img/spin_clinic_promo.png" alt="Spin Clinic" class="hero-text" style="max-height:300px; margin-top:200px; animation: float 3s ease-in-out infinite;">
         </div>
         <img src="img/hero.png" alt="Color guard performers having a blast" class="hero-bg">
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
+        <div class="event-container">
+            <img src="img/spin_clinic_promo.png" alt="Spin Clinic Promo" class="event-img">
+            <div class="event-text">
+                <h2>Spin Clinic: Let's Spin!</h2>
+                <p>Join us on <strong>October 13, 7-9PM</strong> for a fun and beginner friendly spin clinic! You'll learn basic techniques, put together a simple routine and explore the art of flag spinning. No experience necessary, just bring your energy and curiosity!</p>
+                <p class="event-cta">
+                    <a href="/class-register.php" class="btn event-link form-submit" onclick="gtag('event', 'click', { 'event_category': 'Internal Link', 'event_label': 'Spin Clinic Registration Click', 'value': 1 });">Register Now</a>
+                </p>
+            </div>
+        </div>
         <div class="about-container">
             <img src="img/about.png" alt="Allegheny Eclipse color guard in action" class="about-img">
             <div class="about-text">
