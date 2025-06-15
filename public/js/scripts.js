@@ -5,7 +5,75 @@
  * - Smooth scrolling for navbar links
  * - Basic client-side form validation
  * - Dropdown menu toggle for mobile
+ * - Lightbox functionality for gallery images
+ * - Asynchronous form submission with feedback
  */
+
+
+function hideForm(form, message, durationSeconds = 10) {
+    const formWrapper = document.createElement('div');
+    formWrapper.className = 'form-wrapper';
+
+    if (!form.parentElement.classList.contains('form-wrapper')) {
+        form.parentElement.insertBefore(formWrapper, form);
+        formWrapper.appendChild(form);
+     } else {
+         formWrapper = form.parentElement;
+     }
+
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'form-message';
+    messageDiv.textContent = message;
+
+    form.style.display = 'none';
+    formWrapper.appendChild(messageDiv);
+
+    setTimeout(() => {
+        messageDiv.remove();
+        form.style.display = '';
+    }, durationSeconds * 1000);
+}
+
+
+function handleAsyncForm(formSelector, formMessage) {
+  document.querySelectorAll(formSelector).forEach(form => {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: formData
+        });
+
+        const elements = form.querySelectorAll('input, textarea, button, select');
+        elements.forEach(el => el.disabled = true);
+
+        const data = await res.json();
+
+        if (data.success) {
+            toastr.success(data.message || 'Success!');
+            form.reset();
+            elements.forEach(el => el.disabled = false);
+            hideForm(form, formMessage, 10);
+        } else {
+            toastr.error(data.message || 'Something went wrong.');
+            elements.forEach(el => el.disabled = false);
+        }
+
+      } catch (err) {
+          toastr.error('Network error.');
+          elements.forEach(el => el.disabled = false);
+      }
+      if (typeof turnstile !== 'undefined') {
+          turnstile.reset();
+      }
+    });
+  });
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
@@ -18,11 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.toggle('active');
 
         if (heroLogo) {
-            if (navMenu.classList.contains('active')) {
-                heroLogo.style.zIndex = 100;
-            } else {
-                heroLogo.style.zIndex = origZIndex;
-            }
+              heroLogo.style.zIndex = navMenu.classList.contains('active') ? 100 : origZIndex;
         }
     });
 
@@ -30,9 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
-            if (heroLogo) {
-                heroLogo.style.zIndex = origZIndex;
-            }
+            if (heroLogo) heroLogo.style.zIndex = origZIndex;
         });
     });
 
@@ -65,48 +127,52 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-});
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 60,
-                behavior: 'smooth'
-            });
-        }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
+
+    handleAsyncForm('form.contact-form', 'Thank you for your message! We will get back to you soon.');
+    handleAsyncForm('form.register-form', 'Thank you for registering! We will reach out to you for confirmation soon!');
+    handleAsyncForm('form.signup-form', 'Thank you for signing up! We will reach back out to you soon!');
 });
 
-document.querySelector('.contact-form')?.addEventListener('submit', function (e) {
-    const name = document.getElementById('name')?.value.trim();
-    const email = document.getElementById('email')?.value.trim();
-    const comments = document.getElementById('comments')?.value.trim();
-    let isValid = true;
+// document.querySelector('.contact-form')?.addEventListener('submit', function (e) {
+//     const name = document.getElementById('name')?.value.trim();
+//     const email = document.getElementById('email')?.value.trim();
+//     const comments = document.getElementById('comments')?.value.trim();
+//     let isValid = true;
 
-    if (!name) {
-        isValid = false;
-        alert('Please enter your name.');
-    }
+//     if (!name) {
+//         isValid = false;
+//         alert('Please enter your name.');
+//     }
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        isValid = false;
-        alert('Please enter a valid email address.');
-    }
+//     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+//         isValid = false;
+//         alert('Please enter a valid email address.');
+//     }
 
-    if (!comments) {
-        isValid = false;
-        alert('Please enter your comments.');
-    }
+//     if (!comments) {
+//         isValid = false;
+//         alert('Please enter your comments.');
+//     }
 
-    if (!isValid) {
-        e.preventDefault();
-    }
-});
+//     if (!isValid) {
+//         e.preventDefault();
+//     }
+// });
 
 // Lightbox Functionality
 const galleryImages = document.querySelectorAll('.gallery-img');

@@ -14,6 +14,9 @@ require '../inc/init.php';
 
 $config = require '../config.php'; 
 
+
+header('Content-Type: application/json');
+
 // Initialize response array
 $response = ['success' => false, 'message' => ''];
 
@@ -74,15 +77,34 @@ if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-if (isset($_POST['comments'])) {
+if (!isset($_POST['type'])) {
+    $response['message'] = 'Invalid form submission.';
+    echo json_encode($response);
+    exit;
+} else {
+    $formType = $_POST['type'];
+}
+
+if ($formType === 'contact') {
     $comments = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STRING);
     $subject = "Comment Form";
-    $body = "Name: $name\nEmail: $email\nComments: $comments"; 
-} elseif (isset($_POST['experience'])) {
+    $body = "Name: $name\nEmail: $email\nComments: $comments\n"; 
+    $formType = 'Message';
+} elseif ($formType === 'class_registration') {
     $experience = filter_input(INPUT_POST, 'experience', FILTER_SANITIZE_STRING); 
     $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
     $subject = "Spin Clinic Registration";
-    $body = "Name: $name\nEmail: $email\nPhone: $phone\nExperience: $experience";
+    $body = "Name: $name\nEmail: $email\nPhone: $phone\nExperience: $experience\n";
+    $formType = 'Spin Clinic Registration';
+} elseif ($formType ==='sign_up_list') {
+    $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
+    $subject = "Sign Up List";
+    $body = "Name: $name\nEmail: $email\nPhone: $phone\n";
+    $formType = 'Sign Up List';
+} else {
+    $response['message'] = 'Invalid form type.';
+    echo json_encode($response);
+    exit;
 }
 
 if (isset($response['message']) && !empty($response['message'])) {
@@ -93,32 +115,43 @@ if (isset($response['message']) && !empty($response['message'])) {
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
-$mail = new PHPMailer(true);
-try {
-    $mail->SMTPDebug = SMTP::DEBUG_OFF;
-    $mail->isSMTP();
-    $mail->Host = $_ENV['SMTP_HOST'];
-    $mail->SMTPAuth = true;
-    $mail->Username = $_ENV['SMTP_USER'];
-    $mail->Password = $_ENV['SMTP_PASS'];
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = $_ENV['SMTP_PORT'];
 
-    $mail->setFrom($config['fromEmail'], $config['fromEmail']);
-    $mail->addAddress($config['sendTo']);
-    $mail->isHTML(false);
-    
-    $mail->Subject = $subject;
-    $mail->Body = $body;
-    $mail->send();
+if ($config['email']['enabled']) {
+    $mail = new PHPMailer(true);
+    try {
+        $mail->SMTPDebug = SMTP::DEBUG_OFF;
+        $mail->isSMTP();
+        $mail->Host = $_ENV['SMTP_HOST'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $_ENV['SMTP_USER'];
+        $mail->Password = $_ENV['SMTP_PASS'];
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = $_ENV['SMTP_PORT'];
+
+        $mail->setFrom($config['email']['fromEmail'], $config['email']['fromEmail']);
+        $mail->addAddress($config['email']['sendTo']);
+        $mail->isHTML(false);
+        
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+        $mail->send();
+        $response['success'] = true;
+        $response['message'] = 'Message sent successfully.';
+        echo json_encode($response);
+        exit;
+    } catch (Exception $e) {
+        $response['message'] = 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
+        echo json_encode($response);
+        exit;
+    }
+} else {
     $response['success'] = true;
-    $response['message'] = 'Message sent successfully.';
-} catch (Exception $e) {
-    $response['message'] = 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
+    $response['message'] = 'Email sending is disabled in the configuration.';
+    error_log($body,0); 
     echo json_encode($response);
     exit;
 }
 
-header('Location: index.php');
+//header('Location: index.php');
 exit;
 ?>

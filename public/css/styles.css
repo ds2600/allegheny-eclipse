@@ -512,6 +512,17 @@ a {
     color: var(--white);
 }
 
+.form-message {
+  padding: 1em;
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: 1em;
+}
+
+
 /* Footer Styles */
 .footer {
     padding: 40px 20px;
@@ -552,6 +563,11 @@ a {
 
 .subpage-content h1 {
     font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.subpage-content h2 {
     margin-bottom: 30px;
     text-align: center;
 }
@@ -641,6 +657,14 @@ a {
     position: relative;
 }
 
+.signup-form {
+    text-align: center;
+    margin: 0 auto 4rem auto;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+}
 
 
 .event-container {
@@ -686,6 +710,9 @@ a {
     margin-top: 20px;
 }
 
+#toast-container > div {
+    opacity: 1 !important;
+}
 
 /* Responsive Design */
 

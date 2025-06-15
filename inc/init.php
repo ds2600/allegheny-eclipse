@@ -1,5 +1,7 @@
 <?php
 
+define('BASE_PATH', $_SERVER['DOCUMENT_ROOT']);
+
 require '../vendor/autoload.php'; 
 
 if (!file_exists(__DIR__ . '/../.env')) {

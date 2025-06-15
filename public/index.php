@@ -1,31 +1,19 @@
 <?php
 require '../inc/init.php';
+
+// Alternate hero images
+$img1 = 'hero.png';
+$img2 = 'hero_b.png';
+
+$selectedImage = (rand(0, 1) === 0) ? $img1: $img2;
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $_ENV['GA_TRACKING_ID']; ?>"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', <?php echo '\''.$_ENV['GA_TRACKING_ID'].'\''; ?>);
-</script>
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allegheny Eclipse - Warren, Pennsylvania Adult Color Guard</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Merriweather:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+<?php 
+$page_title = 'Allegheny Eclipse - Warren, Pennsylvania Adult Color Guard';
+include '../inc/head.php';
+?>
     <style>
         @keyframes float {
             0% { transform: translateY(0); }
@@ -33,7 +21,6 @@ require '../inc/init.php';
             100% { transform: translateY(0); }
         }
     </style>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 <?php
@@ -46,7 +33,7 @@ include '../inc/navbar.php';
 <!--            <h1 class="hero-text" style="animation: float 3s ease-in-out infinite;">Allegheny Eclipse</h1>-->
                 <img src="img/spin_clinic_promo.png" alt="Spin Clinic" class="hero-text" style="max-height:300px; margin-top:200px; animation: float 3s ease-in-out infinite;">
         </div>
-        <img src="img/hero.png" alt="Color guard performers having a blast" class="hero-bg">
+        <img src="img/<?= htmlspecialchars($selectedImage) ?>" alt="WE ARE ALLEGHENY ECLIPSE!" class="hero-bg">
     </section>
 
     <!-- About Section -->
@@ -109,6 +96,7 @@ include '../inc/navbar.php';
                 </div>
                 <div class="form-group">
                     <div data-sitekey="<?php echo $_ENV['CF_SITE_KEY']; ?>" class="cf-turnstile"></div>
+                    <input type="hidden" name="type" value="contact"/>
                 </div>
                 <button type="submit" class="form-submit">Send Message</button>
             </form>
@@ -117,6 +105,10 @@ include '../inc/navbar.php';
 <?php
 include '../inc/footer.php';
 ?>
-    <script src="js/scripts.js"></script>
+<script src="js/toastr.js"></script>
+<script src="js/scripts.js"></script>
+<script>
+
+</script>
 </body>
 </html>

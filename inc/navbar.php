@@ -15,11 +15,9 @@ $base_url = ($current_page === 'index.php' || $current_page === '') ? '' : $_ENV
                     <li><a href="<?php echo $base_url; ?>#hero">Home</a></li>
                     <li class="dropdown">
                         <a href="<?php echo $base_url; ?>#about">About</a>
-<!--                        <ul class="dropdown-menu">
-                                <li><a href="about.html">Mission</a></li>
-                                <li><a href="<?php echo $base_url; ?>#team">Team</a></li>
+                            <ul class="dropdown-menu">
+                                <li><a href="signup.php">Sign Up</a></li>
                             </ul>
--->
                     </li>
                     <li><a href="<?php echo $base_url; ?>#calendar">Calendar</a></li>
                     <li><a href="<?php echo $base_url; ?>#support">Support</a></li>
