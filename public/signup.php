@@ -17,7 +17,7 @@ include '../inc/navbar.php';
     <section id="subpage-content" class="subpage-content">
         <div class="container">
             <h1>Sign Up</h1>
-            <h2>Sign ups for the 2025 season are currently closed</h2>
+            <h2 style="text-align: center;">Sign ups for the 2025 season are currently closed</h2>
             <div class="content" style="text-align: center;">
                 <p>If you are interested in joining, please fill out the form below and we will notify you when sign ups reopen.</p>
                 <p>
