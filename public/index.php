@@ -1,5 +1,6 @@
 <?php
 require '../inc/init.php';
+$config = require '../config.php'; 
 
 // Alternate hero images
 $img1 = 'hero.png';
@@ -56,7 +57,7 @@ include '../inc/navbar.php';
                 <p>Our mission is to foster a supportive and challenging environment where members can refine their skills, connect with others, and continue to perform with pride and creativity. Whether under the bright lights of a stadium or in the soft spotlight of a local performance, we aim to share the joy, power, and beauty of our art form with every audience we meet. We believe color guard is for everyone — at every stage of life.</p>
                 <p>Join us as we continue to grow, learn, and inspire one another. Together, we are Allegheny Eclipse!</p>
             </div>
-        </div>
+        </div><!-- Hide Video
         <div class="about-video">
             <iframe 
                 src="https://www.youtube.com/embed/6HMWCQlUL5o"
@@ -66,8 +67,7 @@ include '../inc/navbar.php';
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen>
             </iframe>
-     
-        </div>
+        </div>-->
     </section>
 
     <!-- Calendar Section -->
@@ -83,7 +83,7 @@ include '../inc/navbar.php';
             <div class="support-text">
                 <h2>Support Our Journey</h2>
                 <p>We’re building something special, a place where adults can rediscover the joy of color guard, connect through movement and music, and bring performance back into their lives. As we launch this new chapter, we’re raising funds to help cover the basics: flags, poles, equipment bags, and other essentials that make our practices and performances possible. If you believe in creativity, community, and second chances to do what you love, we invite you to support our journey. Every contribution helps us shine a little brighter.</p>
-                <p><a href="https://gofund.me/a6574d11" onclick="gtag('event', 'click', { 'event_category': 'External Link', 'event_label': 'GoFundMe Campaign Click', 'value': 1 });" target="_blank" class="btn support-link">Donate on GoFundMe</a></p>
+                <p><a href="https://gofund.me/9b33c1c5" onclick="gtag('event', 'click', { 'event_category': 'External Link', 'event_label': 'GoFundMe Campaign Click', 'value': 1 });" target="_blank" class="btn support-link">Donate on GoFundMe</a></p>
             </div>
             <img src="img/eclipse_support.png" alt="Support Allegheny Eclipse" class="support-img">
         </div>
