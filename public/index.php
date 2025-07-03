@@ -57,17 +57,17 @@ include '../inc/navbar.php';
                 <p>Our mission is to foster a supportive and challenging environment where members can refine their skills, connect with others, and continue to perform with pride and creativity. Whether under the bright lights of a stadium or in the soft spotlight of a local performance, we aim to share the joy, power, and beauty of our art form with every audience we meet. We believe color guard is for everyone — at every stage of life.</p>
                 <p>Join us as we continue to grow, learn, and inspire one another. Together, we are Allegheny Eclipse!</p>
             </div>
-        </div><!-- Hide Video
+        </div>
         <div class="about-video">
             <iframe 
-                src="https://www.youtube.com/embed/6HMWCQlUL5o"
+                src="https://www.youtube.com/embed/B57iJk3b0mI?si=XJOy9ahp4-3Dpom5"
                 title="Allegheny Eclipse – Intro" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen>
             </iframe>
-        </div>-->
+        </div>
     </section>
 
     <!-- Calendar Section -->
