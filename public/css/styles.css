@@ -305,6 +305,21 @@ a {
     margin-bottom: 15px;
 }
 
+.about-video {
+    margin: 60px auto 0;
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+}
+
+.about-video iframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
 /* Calendar Section */
 .calendar {
     padding: 80px 20px;
@@ -803,6 +818,9 @@ a {
     }
     .subpage-content h1 {
         font-size: 2.5rem;
+    }
+    .about-video {
+        margin-top: 40px;
     }
 }
 @media (max-width: 480px) {

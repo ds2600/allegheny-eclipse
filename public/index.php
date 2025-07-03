@@ -57,6 +57,17 @@ include '../inc/navbar.php';
                 <p>Join us as we continue to grow, learn, and inspire one another. Together, we are Allegheny Eclipse!</p>
             </div>
         </div>
+        <div class="about-video">
+            <iframe 
+                src="https://www.youtube.com/embed/6HMWCQlUL5o"
+                title="Allegheny Eclipse – Intro" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+     
+        </div>
     </section>
 
     <!-- Calendar Section -->
