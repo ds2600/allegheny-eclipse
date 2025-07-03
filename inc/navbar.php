@@ -20,7 +20,7 @@ $base_url = ($current_page === 'index.php' || $current_page === '') ? '' : $_ENV
                             </ul>
                     </li>
                     <li><a href="<?php echo $base_url; ?>#calendar">Calendar</a></li>
-                    <li><a href="<?php echo $base_url; ?>#support">Support</a></li>
+                    <li><a href="https://alleghenyeclipse.printful.me">Store</a></li>
                     <li><a href="<?php echo $base_url; ?>#contact">Contact</a></li>
                 </ul>
             </div>
