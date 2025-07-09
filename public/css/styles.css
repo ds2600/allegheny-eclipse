@@ -50,8 +50,6 @@ a {
     top: 0;
     width: 100%;
     background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));
-
- /*   background: linear-gradient(to bottom, var(--off-black), var(--off-black-light));*/
     z-index: 1000;
 }
 
@@ -88,7 +86,6 @@ a {
     padding: 10px;
     transition: color 0.3s ease;
     color: var(--off-black);
-
 }
 
 .nav-menu a:hover {
@@ -259,7 +256,6 @@ a {
     transform: translateX(-50%) scale(1.05);
     transition: transform 0.3s ease; 
 }
-
 /* About Section */
 .about {
     padding: 80px 20px;
@@ -358,61 +354,81 @@ a {
     margin: 0 auto;
     padding: 0 20px;
 }
-
 .team-text {
+    text-align: center;
     margin-bottom: 40px;
 }
-
 .team-text h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    transition: transform 0.2s ease-out;
 }
-
+.team-text h2:hover {
+    transform: rotate(2deg);
+}
 .team-text p {
     margin-bottom: 15px;
 }
-
 .team-profiles {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 40px;
 }
-
 .profile {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 40px;
-}
-
-.profile:nth-child(even) {
-    flex-direction: row-reverse; 
-}
-
-.profile-img {
     width: 200px;
-    height: 200px;
+    text-align: center;
+}
+.profile-img {
+    width: 180px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-out;
+    object-position:center;
 }
-
-.profile-text {
-    flex: 1;
+.profile-img:hover {
+    transform: scale(1.05);
 }
-
-.profile-text h3 {
-    font-size: 1.8rem;
+.profile-img-wrapper {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.profile h3 {
+    font-size: 1.5rem;
     color: var(--gold);
-    margin-bottom: 10px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s ease-out;
+}
+.profile h3:hover {
+    transform: rotate(2deg);
 }
 
-.profile-text p {
-    margin-bottom: 10px;
+.profile-title {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-top: 5px;
+    font-family: 'Merriweather', serif;
+}
+.profile-link {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.profile-link:hover {
+    color: var(--gold-darker);
 }
 
 /* Support Section */
 .support {
     padding: 80px 20px;
-    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));
+/*    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));*/
 }
 .support-container {
     display: flex;
@@ -458,8 +474,8 @@ a {
 /* Contact Section */
 .contact {
     padding: 80px 20px;
-/*    border-bottom: 2px solid var(--gold);
-    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));*/
+    border-bottom: 2px solid var(--gold);
+    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));
 }
 
 .contact-container {
@@ -536,7 +552,6 @@ a {
   font-size: 1.1em;
   margin-top: 1em;
 }
-
 
 /* Footer Styles */
 .footer {
@@ -681,7 +696,6 @@ a {
     gap: 20px;
 }
 
-
 .event-container {
     text-align: center;
     background: linear-gradient(to bottom, var(--light-purple), var(--primary-purple));
@@ -693,7 +707,6 @@ a {
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto 60px auto;
-
 }
 
 .event-img {
@@ -730,23 +743,20 @@ a {
 }
 
 /* Responsive Design */
-
 @media (max-width: 960px) {
     .hero-logo {
         top: 35%;
-        left: 50%
-        transform: translate(-50%, -50%);
         width: 250px;
     }
     .hero h1 {
-       display:none; 
-    }
+            display: none;
+        }
     .hero-text {
         display: none;
     }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .nav-menu {
         display: none;
         position: absolute;
@@ -779,7 +789,7 @@ a {
     }
 
     .dropdown.active .dropdown-menu {
-        display: block; /* Show when active class is toggled */
+        display: block; /* Show when active */
     }
 
     .dropdown-toggle::after {
@@ -788,7 +798,8 @@ a {
 
     .about-container,
     .support-container,
-    .event-container {
+    .event-container,
+    .team-container {
         flex-direction: column;
     }
 
@@ -796,49 +807,80 @@ a {
     .support-img,
     .event-img,
     .about-text,
-    .support-text {
+    .support-text,
+    .event-text {
         width: 100%;
     }
 
     .calendar-iframe {
         height: 400px;
     }
-    .profile {
-        flex-direction: column;
-        text-align: center;
+
+    .team-profiles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
     }
 
-    .profile:nth-child(even) {
+    .profile {
+        width: calc(50% - 10px); /* Two per row, accounting for gap */
+        max-width: 250px;
+        min-height: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .profile.profile-reverse {
         flex-direction: column; /* Stack vertically on mobile, no reverse */
     }
 
     .profile-img {
-        width: 150px;
-        height: 150px;
+        width: calc(100% - 20px); /* Full width with padding */
+        height: calc(100% - 20px); /* Full height with padding */ 
+        max-height:230px;
     }
+
     .subpage-content h1 {
         font-size: 2.5rem;
     }
+
     .about-video {
         margin-top: 40px;
     }
 }
-@media (max-width: 480px) {
+
+@media screen and (max-width: 480px) {
     .about-text h2,
     .calendar h2,
     .support-text h2,
-    .contact h2 {
-        font-size: 2rem;
-    }
-    .team-text h2,
-    .profile-text h3 {
+    .contact h2,
+    .team-text h2 {
         font-size: 2rem;
     }
 
-    .profile-img {
-        width: 120px;
-        height: 120px;
+    .profile-text h3 {
+        font-size: 1.5rem;
     }
+
+    .profile {
+        width: calc(50% - 10px); /* Two per row, accounting for gap */
+        max-width: 250px;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .profile-img {
+        width: calc(100% - 20px); /* Full width with padding */
+        height: calc(100% - 20px); /* Full height with padding */ 
+        max-height: 180px;
+    }
+
     .subpage-content h1 {
         font-size: 2rem;
     }

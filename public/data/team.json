@@ -1,0 +1,58 @@
+{
+    "members": [
+        {
+            "name": "Amanda Beil",
+            "image": "img/team/amanda-beil.jpg",
+            "title": "Director",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "50%",
+            "zoom": "80%"
+        },
+        {
+            "name": "Laura Bunce",
+            "image": "img/team/laura-bunce.jpg",
+            "title": "Co-Director",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "50%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Marianna Ireland",
+            "image": "img/team/placeholder.png",
+            "title": "Co-Director",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "50%",
+            "zoom": "100%"
+        },       
+        {
+            "name": "Christine Schroll",
+            "image": "img/team/christine-schroll.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "50%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Katie Nelson",
+            "image": "img/team/katie-nelson.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "30%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Nikki Jamison",
+            "image": "img/team/nikki-jamison.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "30%",
+            "zoom": "100%"
+        }
+    ]
+}
