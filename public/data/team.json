@@ -19,7 +19,7 @@
             "zoom": "100%"
         },
         {
-            "name": "Marianna Ireland",
+            "name": "Mari Ireland",
             "image": "img/team/mari-ireland.jpg",
             "title": "Co-Director",
             "bio_url": "",
@@ -87,8 +87,18 @@
             "title": "",
             "bio_url": "",
             "offset_x": "50%",
-            "offset_y": "50%",
+            "offset_y": "53%",
             "zoom": "100%"
+        },
+        {
+            "name": "Jayden Thom",
+            "image": "img/team/jayden-thom.jpg",
+            "title": "Mini-Eclipser",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "30%",
+            "zoom": "100%",
+            "priority": "999"
         }
 
     ]
