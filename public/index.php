@@ -50,7 +50,7 @@ include '../inc/navbar.php';
             </div>
         </div>
         <div class="about-container">
-            <img src="img/we_are.jpg" alt="We are Allegheny Eclipse" class="about-img">
+            <img src="img/team/group.jpg" alt="We are Allegheny Eclipse" class="about-img">
             <div class="about-text">
                 <h2>About Us</h2>
                 <p>Founded in 2025, our color guard was created for adults who never stopped loving the art of performance. What started as a small dream quickly grew into a vibrant space for movers, dancers, spinners, and storytellers of all backgrounds. Our members bring their experience, passion, and dedication together to celebrate the athleticism, artistry, and spirit of color guard.</p>
@@ -77,6 +77,9 @@ include '../inc/navbar.php';
             <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=America%2FNew_York&showPrint=0&showTitle=0&showCalendars=0&title=Allegheny%20Eclipse&mode=AGENDA&src=MGZlMDUxOGIzNmNjZTIxMzcwNGJjM2ZhOTlhMTVjNmI2NDE5ZjIzOTBiMTQ5MzI3MmM0YzNhMWQzNzZiZmNkNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239E69AF" class="calendar-iframe" frameborder="0" scrolling="no"></iframe>
         </div>
     </section>
+
+    <!-- Team Section -->
+<?php include __DIR__ . '/../inc/team.php'; ?>
     <!-- Support Us Section -->
     <section id="support" class="support">
         <div class="support-container">

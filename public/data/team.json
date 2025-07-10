@@ -1,0 +1,105 @@
+{
+    "members": [
+        {
+            "name": "Amanda Beil",
+            "image": "img/team/amanda-beil.jpg",
+            "title": "Director",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "35%",
+            "zoom": "80%"
+        },
+        {
+            "name": "Laura Bunce",
+            "image": "img/team/laura-bunce.jpg",
+            "title": "Co-Director",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "30%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Mari Ireland",
+            "image": "img/team/mari-ireland.jpg",
+            "title": "Co-Director",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "40%",
+            "zoom": "100%"
+        },       
+        {
+            "name": "Christine Schroll",
+            "image": "img/team/christine-schroll.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "60%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Katie Nelson",
+            "image": "img/team/katie-nelson.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "30%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Nikki Jamison",
+            "image": "img/team/nikki-jamison.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "30%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Kendra Nickerson",
+            "image": "img/team/kendra-nickerson.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "30%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Melissa Castillo",
+            "image": "img/team/melissa-castillo.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "15%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Cailyn Scalise",
+            "image": "img/team/cailyn-scalise.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "10%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Tammy Castro",
+            "image": "img/team/tammy-castro.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "53%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Jayden Thom",
+            "image": "img/team/jayden-thom.jpg",
+            "title": "Mini-Eclipser",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "30%",
+            "zoom": "100%",
+            "priority": "999"
+        }
+
+    ]
+}
