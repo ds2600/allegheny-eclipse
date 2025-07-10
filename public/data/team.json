@@ -6,7 +6,7 @@
             "title": "Director",
             "bio_url": "",
             "offset_x": "50%",
-            "offset_y": "50%",
+            "offset_y": "35%",
             "zoom": "80%"
         },
         {
@@ -15,16 +15,16 @@
             "title": "Co-Director",
             "bio_url": "",
             "offset_x": "50%",
-            "offset_y": "50%",
+            "offset_y": "30%",
             "zoom": "100%"
         },
         {
             "name": "Marianna Ireland",
-            "image": "img/team/placeholder.png",
+            "image": "img/team/mari-ireland.jpg",
             "title": "Co-Director",
             "bio_url": "",
             "offset_x": "50%",
-            "offset_y": "50%",
+            "offset_y": "40%",
             "zoom": "100%"
         },       
         {
@@ -33,7 +33,7 @@
             "title": "",
             "bio_url": "",
             "offset_x": "50%",
-            "offset_y": "50%",
+            "offset_y": "60%",
             "zoom": "100%"
         },
         {
@@ -53,6 +53,43 @@
             "offset_x": "50%",
             "offset_y": "30%",
             "zoom": "100%"
+        },
+        {
+            "name": "Kendra Nickerson",
+            "image": "img/team/kendra-nickerson.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "30%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Melissa Castillo",
+            "image": "img/team/melissa-castillo.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "15%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Cailyn Scalise",
+            "image": "img/team/cailyn-scalise.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "10%",
+            "zoom": "100%"
+        },
+        {
+            "name": "Tammy Castro",
+            "image": "img/team/tammy-castro.jpg",
+            "title": "",
+            "bio_url": "",
+            "offset_x": "50%",
+            "offset_y": "50%",
+            "zoom": "100%"
         }
+
     ]
 }

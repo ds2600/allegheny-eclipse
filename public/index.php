@@ -118,7 +118,13 @@ include '../inc/navbar.php';
                         if (isset($member['offset_x']) && isset($member['offset_y'])) {
                             $offset_style = ' style="object-position: ' . htmlspecialchars($member['offset_x'] ?? '50%') . ' ' . htmlspecialchars($member['offset_y'] ?? '50%') . '; "';
                         }
-                        $image_tag = '<img src="' . htmlspecialchars($member['image']) . '" alt="' . htmlspecialchars($member['name']) . '" class="profile-img"' . $offset_style . '>';
+                        $img_src = !empty($member['image']) 
+                                    && file_exists($_SERVER['DOCUMENT_ROOT'] . '/'
+                                                  . ltrim($member['image'], '/'))
+                                    ? $member['image']
+                                    : 'img/team/placeholder.png';
+                            
+                        $image_tag = '<img src="' . htmlspecialchars($img_src) . '" alt="' . htmlspecialchars($member['name']) . '" class="profile-img"' . $offset_style . '>';
                         if (!empty($member['bio_url'])) {
                             $name_content = '<a href="' . htmlspecialchars($member['bio_url']) . '" class="profile-link">' . htmlspecialchars($member['name']) . '</a>';
                             $image_tag = '<a href="' . htmlspecialchars($member['bio_url']) . '" class="profile-link">' . $image_tag . '</a>';
