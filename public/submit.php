@@ -116,7 +116,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-if ($config['email']['enabled']) {
+if ($_ENV['SMTP_ENABLED']) {
     $mail = new PHPMailer(true);
     try {
         $mail->SMTPDebug = SMTP::DEBUG_OFF;
@@ -128,8 +128,8 @@ if ($config['email']['enabled']) {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = $_ENV['SMTP_PORT'];
 
-        $mail->setFrom($config['email']['fromEmail'], $config['email']['fromEmail']);
-        $mail->addAddress($config['email']['sendTo']);
+        $mail->setFrom($_ENV['SMTP_FROM_EMAIL'], $_ENV['SMTP_FROM_NAME']);
+        $mail->addAddress($_ENV['SMTP_TO_EMAIL']);
         $mail->isHTML(false);
         
         $mail->Subject = $subject;
