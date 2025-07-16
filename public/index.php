@@ -1,27 +1,57 @@
 <?php
 require '../inc/init.php';
-$config = require '../config.php'; 
+$config = require '../config.php';
 
-if ($_ENV['MAINTENANCE_MODE'] === 'true') {
+// Load environment variables safely
+$maintenanceMode = $_ENV['MAINTENANCE_MODE'] === 'true';
+
+if ($maintenanceMode) {
     header('Location: /maintenance.html');
     exit;
 }
 
-$url = isset($_GET['url']) ? rtrim($_GET['url'], '/') : '';
-switch ($url) {
-    case '':
-        require '../pages/home.php';
-        break;
-    case 'class-register':
-        require '../pages/class-register.php';
-        break;
-    case 'signup':
-        require '../pages/signup.php';
-        break;
-    case 'error':
-        require '../pages/error.php';
-        break;
-    default:
-        header('Location: /index.php?url=error&code=404');
+//$url = isset($_GET['url']) ? trim(filter_var($_GET['url'], FILTER_SANITIZE_URL), '/') : '';
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$url = trim($uri, '/');
+$segments = $url !== '' ? explode('/', $url) : [];
+
+// Define route structure
+$routes = [
+    '' => ['file' => 'home.php'],
+    'signup' => ['file' => 'signup.php'],
+    'class-register' => ['file' => 'class-register.php'],
+    'error' => ['file' => 'error.php'],
+
+    // Dynamic routes
+    'profile' => ['file' => 'profile.php', 'params' => ['name']],
+    'event' => ['file' => 'event.php', 'params' => ['id']],
+];
+
+// Get the first segment as route key
+$routeKey = $segments[0] ?? '';
+
+// Handle known route
+if (isset($routes[$routeKey])) {
+    $route = $routes[$routeKey];
+    $filePath = "../pages/{$route['file']}";
+
+    if (file_exists($filePath)) {
+        // Extract dynamic parameters, if any
+        $params = [];
+        if (!empty($route['params'])) {
+            foreach ($route['params'] as $i => $paramName) {
+                $params[$paramName] = $segments[$i + 1] ?? null;
+            }
+        }
+
+        // Pass parameters to included page
+        require $filePath;
         exit;
+    }
 }
+
+// Fallback: 404
+http_response_code(404);
+require '../pages/error.php';
+exit;
+
