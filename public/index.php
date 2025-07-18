@@ -27,11 +27,19 @@ $routes = [
     'event' => ['file' => 'event.php', 'params' => ['id']],
 ];
 
+$dashRoutes = [
+    '' => ['file' => 'home.php'],
+    'login' => ['file' => 'login.php'],
+    'logout' => ['file' => 'logout.php']
+];
+
+
+
 // Get the first segment as route key
 $routeKey = $segments[0] ?? '';
 
 // Handle known route
-if (isset($routes[$routeKey])) {
+if (isset($routes[$routeKey]) && $routeKey !== 'dash') {
     $route = $routes[$routeKey];
     $filePath = "../pages/{$route['file']}";
 
@@ -47,6 +55,27 @@ if (isset($routes[$routeKey])) {
         // Pass parameters to included page
         require $filePath;
         exit;
+    }
+}
+
+if ($routeKey === 'dash') {
+    $dashSubKey = $segments[1] ?? '';
+
+    if (isset($dashRoutes[$dashSubKey])) {
+        $route = $dashRoutes[$dashSubKey];
+        $filePath = "../pages/dash/{$route['file']}";
+
+        if (file_exists($filePath)) {
+            $params = [];
+            if (!empty($route['params'])) {
+                foreach ($route['params'] as $i => $paramName) {
+                    $params[$paramName] = $segments[$i + 2] ?? null; 
+                }
+            }
+
+            require $filePath;
+            exit;
+        }
     }
 }
 
