@@ -1,7 +1,7 @@
 <?php
 // Alternate hero images
-$img1 = 'hero.png';
-$img2 = 'hero_b.png';
+$img1 = 'desk.png';
+$img2 = 'desk.png';
 
 $selectedImage = (rand(0, 1) === 0) ? $img1: $img2;
 ?>
@@ -29,7 +29,7 @@ include '../inc/navbar.php';
         <img src="img/logo.png" alt="Allegheny Eclipse logo" class="hero-logo">
         <div class="hero-content">
 <!--            <h1 class="hero-text" style="animation: float 3s ease-in-out infinite;">Allegheny Eclipse</h1>-->
-                <img src="img/spin_clinic_promo.png" alt="Spin Clinic" class="hero-text" style="max-height:300px; margin-top:200px; animation: float 3s ease-in-out infinite;">
+<!--                <img src="img/spin_clinic_promo.png" alt="Spin Clinic" class="hero-text" style="max-height:300px; margin-top:200px; animation: float 3s ease-in-out infinite;">-->
         </div>
         <img src="img/<?= htmlspecialchars($selectedImage) ?>" alt="WE ARE ALLEGHENY ECLIPSE!" class="hero-bg">
     </section>
