@@ -15,8 +15,8 @@ include '../inc/navbar.php';
             <h1>Sign Up</h1>
             <h2 style="text-align: center;">2026 Season Sign Ups</h2>
             <div class="content" style="text-align: center;">
-                <p>If you are interested in joining, please fill out the form below and we will notify you when sign ups reopen.</p>
-                <p>
+                <p>Fill out the form below and we will be in touch with more information!</p>
+                <p style="padding-top:1rem;">
                     <form action="submit.php" method="POST" class="signup-form">
                         <div class="form-group">
                             <label for="name">Name</label>
