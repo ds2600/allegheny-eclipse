@@ -37,12 +37,12 @@ include '../inc/navbar.php';
     <!-- About Section -->
     <section id="about" class="about">
         <div class="event-container">
-            <img src="img/spin_clinic_promo.png" alt="Spin Clinic Promo" class="event-img">
+            <img src="img/spin_clinic_promo.png" alt="2026 Season Sign Ups!" class="event-img">
             <div class="event-text">
-                <h2>Spin Clinic: Let's Spin!</h2>
-                <p>Join us on <strong>October 13, 7-9PM</strong> for a fun and beginner friendly spin clinic! You'll learn basic techniques, put together a simple routine and explore the art of flag spinning. No experience necessary, just bring your energy and curiosity!</p>
+                <h2>2026 Season</h2>
+                <p>Sign up for more information <strong>now</strong>! The 2026 season is coming up soon!!</p>
                 <p class="event-cta">
-                    <a href="/class-register.php" class="btn event-link form-submit" onclick="gtag('event', 'click', { 'event_category': 'Internal Link', 'event_label': 'Spin Clinic Registration Click', 'value': 1 });">Register Now</a>
+                    <a href="signup" class="btn event-link form-submit" onclick="gtag('event', 'click', { 'event_category': 'Internal Link', 'event_label': 'Spin Clinic Registration Click', 'value': 1 });">Sign Up</a>
                 </p>
             </div>
         </div>
