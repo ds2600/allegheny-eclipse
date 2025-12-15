@@ -17,7 +17,7 @@ $base_url = '/';
                     <li class="dropdown">
                         <a href="<?php echo $base_url; ?>#about">About</a>
                             <ul class="dropdown-menu">
-                                <li><a href="signup.php">Sign Up</a></li>
+                                <li><a href="signup">Sign Up</a></li>
                             </ul>
                     </li>
                     <li><a href="<?php echo $base_url; ?>#calendar">Calendar</a></li>
