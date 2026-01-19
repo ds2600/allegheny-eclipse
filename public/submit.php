@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-if ($_ENV['CF_ENABLED']) {
+if ($_ENV['CF_ENABLED'] == 'true') {
     $captcha_response = filter_input(INPUT_POST, 'cf-turnstile-response', FILTER_SANITIZE_STRING);
 
     if (empty($captcha_response)) {
@@ -58,7 +58,6 @@ if ($_ENV['CF_ENABLED']) {
         exit;
     }
 }
-
 // Get form data
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
