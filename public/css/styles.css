@@ -199,12 +199,9 @@ a {
 /* Hero Section */
 .hero {
     position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
+    height: 60vh;
+    max-height: 600px;
+    min-height: 350px;
 }
 
 .hero-bg {

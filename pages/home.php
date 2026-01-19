@@ -1,7 +1,7 @@
 <?php
 // Alternate hero images
-$img1 = 'desk.png';
-$img2 = 'desk.png';
+$img1 = '2026desk.png';
+$img2 = '2026desk.png';
 
 $selectedImage = (rand(0, 1) === 0) ? $img1: $img2;
 ?>
