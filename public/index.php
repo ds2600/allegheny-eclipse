@@ -22,6 +22,7 @@ $routes = [
     'albums' => ['file' => 'albums.php'],
     'error' => ['file' => 'error.php'],
     '2025' => ['file' => '2025.php'],
+    'workshops' => ['file' => 'workshops.php'],
 
     // Dynamic routes
     'profile' => ['file' => 'profile.php', 'params' => ['name']],

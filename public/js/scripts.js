@@ -10,28 +10,39 @@
  */
 
 
-function hideForm(form, message, durationSeconds = 10) {
+function hideForm(form, message, durationSeconds = 10, formType) {
     const formWrapper = document.createElement('div');
     formWrapper.className = 'form-wrapper';
 
     if (!form.parentElement.classList.contains('form-wrapper')) {
         form.parentElement.insertBefore(formWrapper, form);
         formWrapper.appendChild(form);
-     } else {
-         formWrapper = form.parentElement;
-     }
+    } else {
+        formWrapper = form.parentElement;
+    }
+        
+    if (formType === 'sign_up_list') {
+    message = `
+      Thank you for signing up! 
+      <p>Please download and complete the below forms and email them to <a href="mailto:alleghenyeclipse2025@gmail.com">alleghenyeclipse2025@gmail.com</a>.</p>
+      <p><a href="https://docs.google.com/document/d/1bfpoSzo1R7sSa-K5AkKA5yot0M7n6xq-1Lhvw4MrI5w/edit?usp=sharing" target="_blank" rel="noopener">Injury Policy</a></p>
+      <p><a href="https://docs.google.com/document/d/1EbVtjESpyJDUIO1r5wyMuMvb-XW8pPqoL3o8ZeGOW30/edit?usp=sharing" target="_blank" rel="noopener">AE Guidelines</a></p>
+    `;
+    }
 
     const messageDiv = document.createElement('div');
     messageDiv.className = 'form-message';
-    messageDiv.textContent = message;
+    messageDiv.innerHTML = message;
 
     form.style.display = 'none';
     formWrapper.appendChild(messageDiv);
-
-    setTimeout(() => {
-        messageDiv.remove();
-        form.style.display = '';
-    }, durationSeconds * 1000);
+    
+    if (formType !== 'sign_up_list') {
+        setTimeout(() => {
+            messageDiv.remove();
+            form.style.display = '';
+        }, durationSeconds * 1000);
+    }
 }
 
 
@@ -41,23 +52,22 @@ function handleAsyncForm(formSelector, formMessage) {
       e.preventDefault();
 
       const formData = new FormData(form);
-
+      const formType = formData.get('type');
       try {
         const res = await fetch(form.action, {
           method: 'POST',
           body: formData
         });
-
+        console.log(formType);
         const elements = form.querySelectorAll('input, textarea, button, select');
         elements.forEach(el => el.disabled = true);
 
         const data = await res.json();
-
         if (data.success) {
             toastr.success(data.message || 'Success!');
             form.reset();
             elements.forEach(el => el.disabled = false);
-            hideForm(form, formMessage, 10);
+            hideForm(form, formMessage, 10, formType);
         } else {
             toastr.error(data.message || 'Something went wrong.');
             elements.forEach(el => el.disabled = false);
@@ -145,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     handleAsyncForm('form.contact-form', 'Thank you for your message! We will get back to you soon.');
     handleAsyncForm('form.register-form', 'Thank you for registering! We will reach out to you for confirmation soon!');
-    handleAsyncForm('form.signup-form', 'Thank you for signing up! We will reach back out to you soon!');
+    handleAsyncForm('form.signup-form', 'Thank you for signing up!');
 });
 
 // document.querySelector('.contact-form')?.addEventListener('submit', function (e) {
