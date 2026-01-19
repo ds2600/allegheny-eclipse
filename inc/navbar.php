@@ -17,6 +17,7 @@ $base_url = '/';
                     <li class="dropdown">
                         <a href="<?php echo $base_url; ?>#about">About</a>
                             <ul class="dropdown-menu">
+                                <li><a href="2025">2025 Season</a></li>
                                 <li><a href="signup">Sign Up</a></li>
                             </ul>
                     </li>

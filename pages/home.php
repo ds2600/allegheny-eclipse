@@ -76,8 +76,11 @@ include '../inc/navbar.php';
     </section>
 
     <!-- Team Section -->
-<?php include __DIR__ . '/../inc/team.php'; ?>
-    <!-- Support Us Section -->
+<?php if (false): 
+    include __DIR__ . '/../inc/team.php'; 
+endif;
+?>
+<!-- Support Us Section -->
     <section id="support" class="support">
         <div class="support-container">
             <div class="support-text">

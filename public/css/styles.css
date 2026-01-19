@@ -428,7 +428,7 @@ a {
 /* Support Section */
 .support {
     padding: 80px 20px;
-/*    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));*/
+    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));
 }
 .support-container {
     display: flex;
@@ -474,8 +474,8 @@ a {
 /* Contact Section */
 .contact {
     padding: 80px 20px;
-    border-bottom: 2px solid var(--gold);
-    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));
+/*    border-bottom: 2px solid var(--gold);*/
+/*    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));*/
 }
 
 .contact-container {
@@ -588,7 +588,6 @@ a {
 .subpage-content {
     padding: 80px 20px;
     background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));
-    min-height: calc(100vh - 60px); /* Adjust based on navbar height */
 }
 
 .subpage-content h1 {
@@ -885,3 +884,192 @@ a {
         font-size: 2rem;
     }
 }
+
+/* Archive Pages */
+.archive-year {
+    padding: 80px 20px;
+}
+
+/* Each colored section block */
+.archive-section {
+    padding: 70px 20px;
+}
+
+.archive-section .container {
+    max-width: 1200px;
+}
+
+/* Section variants (alternate colors like your other pages) */
+.archive-section--purple {
+    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));
+}
+
+.archive-section--dark {
+    background: linear-gradient(to bottom, var(--off-black), var(--off-black-light));
+}
+
+.archive-section--gold {
+    background: linear-gradient(to bottom, var(--gold-darker), var(--gold));
+    color: var(--off-black);
+}
+
+.archive-section--gold h2,
+.archive-section--gold p,
+.archive-section--gold a {
+    color: var(--off-black);
+    text-shadow: none;
+}
+
+.archive-section-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.archive-section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.archive-section-title p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* Generic content wrapper inside archive sections */
+.archive-section-body {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+/* ===========================
+   Archive Album Grid
+   =========================== */
+
+.archive-album {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Optional: album filter/links row */
+.archive-album-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 25px 0 10px 0;
+}
+
+/* Responsive grid */
+.album-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+/* Thumbnail card */
+.album-item {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.album-item:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+/*
+  The key: consistent thumbnails from mixed-aspect images.
+  We force a predictable box and use object-fit: cover.
+*/
+.album-thumb {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* square thumb by default */
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    background: rgba(0,0,0,0.35);
+}
+
+/* Caption overlay */
+.album-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 12px;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* Optional tag/badge in corner */
+.album-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(192, 142, 45, 0.9);
+    color: var(--off-black);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    border-radius: 999px;
+}
+
+/* Optional: allow some tiles to be larger */
+.album-item--wide {
+    grid-column: span 2;
+}
+.album-item--tall .album-thumb {
+    aspect-ratio: 3 / 4;
+}
+.album-item--wide .album-thumb {
+    aspect-ratio: 16 / 9;
+}
+
+/* ===========================
+   Album Grid Responsiveness
+   =========================== */
+
+@media screen and (max-width: 960px) {
+    .album-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .archive-section-title h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .album-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .archive-section-title h2 {
+        font-size: 2rem;
+    }
+
+    .album-caption {
+        font-size: 0.95rem;
+    }
+}
+
