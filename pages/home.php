@@ -85,8 +85,14 @@ endif;
         <div class="support-container">
             <div class="support-text">
                 <h2>Support Our Journey</h2>
-                <p>We’re building something special, a place where adults can rediscover the joy of color guard, connect through movement and music, and bring performance back into their lives. As we launch this new chapter, we’re raising funds to help cover the basics: flags, poles, equipment bags, and other essentials that make our practices and performances possible. If you believe in creativity, community, and second chances to do what you love, we invite you to support our journey. Every contribution helps us shine a little brighter.</p>
-                <p><a href="https://gofund.me/9b33c1c5" onclick="gtag('event', 'click', { 'event_category': 'External Link', 'event_label': 'GoFundMe Campaign Click', 'value': 1 });" target="_blank" class="btn support-link">Donate on GoFundMe</a></p>
+                <p>We’re building something special, a place where adults can rediscover the joy of color guard, connect through movement and music, and bring performance back into their lives.</p>
+                <p>As we launch this new chapter, we’re raising funds to help cover the basics: flags, poles, equipment bags, and other essentials that make our practices and performances possible.</p>
+                <p>We have multiple ways you can support us!</p>
+                <p>
+                    <a href="https://alleghenyeclipse.printful.me" style="margin-right:1.5em;" onclick="gtag('event', 'click', { 'event_category': 'External Link', 'event_label': 'Store Button', 'value': 1 });" target="_blank" class="btn support-link">Buy Merch</a>
+                    <a href="https://gofund.me/9b33c1c5" style="margin-right:1.5em;" onclick="gtag('event', 'click', { 'event_category': 'External Link', 'event_label': 'GoFundMe Campaign Click', 'value': 1 });" target="_blank" class="btn support-link">Donate on GoFundMe</a>
+                    <a href="https://drive.google.com/file/d/1M1PRicjUxR6gUAVlkKZiPzw9v-AIw8jx/view?usp=drive_link" style="margin-right:1.5em;" onclick="gtag('event', 'click', { 'event_category': 'External Link', 'event_label': 'Sponsor Button', 'value': 1 });" target="_blank" class="btn support-link">Sponsor Us</a>
+                </p>
             </div>
             <img src="img/eclipse_support.png" alt="Support Allegheny Eclipse" class="support-img">
         </div>
