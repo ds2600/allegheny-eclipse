@@ -470,7 +470,7 @@ a {
 
 /* Contact Section */
 .contact {
-    padding: 80px 20px;
+    padding: 80px 20px 40px 20px;
 /*    border-bottom: 2px solid var(--gold);*/
 /*    background: linear-gradient(to bottom, var(--primary-purple), var(--light-purple));*/
 }
@@ -750,6 +750,18 @@ a {
     .hero-text {
         display: none;
     }
+}
+
+.wc-container {
+    margin: 0 auto;
+    text-align:center;
+    padding: 140px 20px 0px 20px;
+}
+
+.wc-img {
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease-out;
 }
 
 @media screen and (max-width: 768px) {

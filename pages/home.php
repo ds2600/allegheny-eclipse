@@ -121,6 +121,11 @@ endif;
                 <button type="submit" class="form-submit">Send Message</button>
             </form>
         </div>
+        <div class="wc-container">
+            <a href="https://www.warrencountypa.com?utm_source=alleghenyeclipse.com&utm_medium=referral" target="_blank" class="wc-link" onclick="gtag('event', 'click', { 'event_category': 'External Link', 'event_label': 'Warren County Website Click', 'value': 1 });">
+            <img src="img/wc_logo.png" alt="Proudly from Warren County, PA" class="wc-img">
+            </a>
+        </div>
     </section>
 <?php
 include '../inc/footer.php';
