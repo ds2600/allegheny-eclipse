@@ -19,7 +19,7 @@ $theme_color    = $theme_color    ?? '#85598E'; // Primary purple
 <!-- Styles -->
 <link rel="stylesheet" href="/css/styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Merriweather:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papOY1xwKAV3qvR3rKXyUjkM51FgNmjV+e5OB/aDncckGiAvkC+z8a+pgbzhm8qZKhTe2bPaDPlN+QXnS6Ut/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
 
 <!-- Favicons -->
