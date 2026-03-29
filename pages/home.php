@@ -40,9 +40,9 @@ include '../inc/navbar.php';
             <img src="img/spin_clinic_promo.png" alt="2026 Season Sign Ups!" class="event-img">
             <div class="event-text">
                 <h2>2026 Season</h2>
-                <p>Sign up for more information <strong>now</strong>! The 2026 season is coming up soon!!</p>
+                <p>The 2026 Season is almost here! <strong>Sign up today</strong> to secure your spot in our upcoming clinics and get all the latest updates.</p>
                 <p class="event-cta">
-                    <a href="signup" class="btn event-link form-submit" onclick="gtag('event', 'click', { 'event_category': 'Internal Link', 'event_label': 'Spin Clinic Registration Click', 'value': 1 });">Sign Up</a>
+                    <a href="signup" class="btn event-link form-submit" onclick="gtag('event', 'registration_click', { 'event_label': 'Spin Clinic' });">Sign Up Now</a>
                 </p>
             </div>
         </div>

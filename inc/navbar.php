@@ -18,7 +18,6 @@ $base_url = '/';
                         <a href="#">Participate</a>
                             <ul class="dropdown-menu">
                                <li><a href="signup">2026 Sign Up</a></li>
-                               <li><a href="workshops">2026 Workshops</a></li>
                             </ul>
                     </li>
                     <li class="dropdown">
